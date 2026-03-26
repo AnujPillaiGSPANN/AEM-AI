@@ -1,7 +1,0 @@
-{
-  "mappings": [
-    "/content/aem-ai-sample/:/",
-    "/content/aem-ai-sample/metadata:/metadata.json",
-    "/content/aem-ai-sample/configuration:/.helix/config.json"
-  ]
-}
