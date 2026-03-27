@@ -1,0 +1,9 @@
+{
+  "type": "xwalk",
+  "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
+  "contentHostUrl": "author-p24152-e1275188.adobeaemcloud.com",
+  "aemSitePath": "/content/EMA_SAMPLE_PROJECT",
+  "aemAssetsFolderPath": "/content/dam/EMA_SAMPLE_PROJECT",
+  "aemSiteName": "EMA_SAMPLE_PROJECT",
+  "aemSiteTitle": "EMA SAMPLE PROJECT"
+}
