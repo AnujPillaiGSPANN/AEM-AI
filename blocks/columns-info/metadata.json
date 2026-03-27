@@ -1,0 +1,41 @@
+{
+  "variantName": "columns-info",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-27T09:21:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.lipsum.com/",
+    "originPage": "Lorem Ipsum homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "info-qa",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "2 columns with H2 headings + paragraphs",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Q&A information pages",
+      "text-heavy two-column layouts",
+      "informational content side-by-side"
+    ],
+    "notSuitableFor": [
+      "image-heavy column layouts",
+      "product comparison columns",
+      "columns with CTAs or buttons"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "content/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-27T09:21:00.000Z"
+  }
+}
