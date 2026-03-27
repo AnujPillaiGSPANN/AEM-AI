@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://aem-author/bin/franklin.delivery/AnujPillaiGSPANN/aem-ai-sample/main"
+    url: "https://author-p24152-e1275188.adobeaemcloud.com/bin/franklin.delivery/AnujPillaiGSPANN/aem-ai-sample/main"
     type: "markup"
     suffix: ".html"
