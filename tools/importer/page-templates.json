@@ -1,0 +1,74 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.lipsum.com/"
+      ],
+      "description": "Lorem Ipsum homepage with content generation tool and reference information",
+      "blocks": [
+        {
+          "name": "columns-info",
+          "instances": [
+            "#Panes"
+          ]
+        },
+        {
+          "name": "form",
+          "instances": [
+            "#Panes form"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "Hero",
+          "selector": "#Inner",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#Inner > h1",
+            "#Inner > h4",
+            "#Inner > h5"
+          ]
+        },
+        {
+          "id": "main-content",
+          "name": "Main Content",
+          "selector": "#Panes",
+          "style": null,
+          "blocks": [
+            "columns-info",
+            "form"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "info-boxes",
+          "name": "Info Boxes",
+          "selector": [
+            "#Content > .boxed",
+            "#Packages"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#Content > .boxed"
+          ]
+        },
+        {
+          "id": "latin-reference",
+          "name": "Latin Reference",
+          "selector": "#Translation",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#Translation > h3",
+            "#Translation > p"
+          ]
+        }
+      ]
+    }
+  ]
+}
