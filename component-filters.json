@@ -5,7 +5,7 @@
       "section"
     ]
   },
-{
+  {
     "id": "section",
     "components": [
       "accordion",
@@ -17,7 +17,6 @@
       "fragment",
       "form",
       "hero",
-      "hero-banner",  // <--- Add this line here
       "image",
       "quote",
       "search",
@@ -32,6 +31,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "cards-contact",
+    "components": [
+      "card-contact"
     ]
   },
   {
