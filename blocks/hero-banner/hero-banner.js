@@ -11,18 +11,60 @@ export default function decorate(block) {
   }
   imageRow.remove();
 
-  // Remaining rows become overlay content
-  const overlay = document.createElement('div');
-  overlay.classList.add('hero-banner-content');
+  // Collect remaining rows
+  const contentRow = rows[1];
+  const mediaRow = rows[2];
 
-  rows.slice(1).forEach((row) => {
-    while (row.firstElementChild) {
-      const cell = row.firstElementChild;
-      while (cell.firstChild) overlay.append(cell.firstChild);
+  // Build text content from row 1
+  const textCol = document.createElement('div');
+  textCol.classList.add('hero-banner-text');
+  if (contentRow) {
+    while (contentRow.firstElementChild) {
+      const cell = contentRow.firstElementChild;
+      while (cell.firstChild) textCol.append(cell.firstChild);
       cell.remove();
     }
-    row.remove();
-  });
+    contentRow.remove();
+  }
+
+  // Check row 2 for optional foreground media (image or video)
+  let mediaCol = null;
+  if (mediaRow) {
+    const vid = mediaRow.querySelector('a[href*=".mp4"], a[href*=".webm"], video');
+    const pic = mediaRow.querySelector('picture');
+
+    if (vid || pic) {
+      mediaCol = document.createElement('div');
+      mediaCol.classList.add('hero-banner-media');
+
+      if (vid && vid.tagName === 'A') {
+        // Convert link to <video>
+        const video = document.createElement('video');
+        video.src = vid.href;
+        video.setAttribute('autoplay', '');
+        video.setAttribute('muted', '');
+        video.setAttribute('loop', '');
+        video.setAttribute('playsinline', '');
+        mediaCol.append(video);
+      } else if (vid) {
+        mediaCol.append(vid);
+      } else {
+        mediaCol.append(pic);
+      }
+
+      block.classList.add('hero-banner-with-media');
+    }
+    mediaRow.remove();
+  }
+
+  // Remove any leftover rows
+  rows.slice(3).forEach((row) => row.remove());
+
+  // Assemble overlay
+  const overlay = document.createElement('div');
+  overlay.classList.add('hero-banner-content');
+  overlay.append(textCol);
+  if (mediaCol) overlay.append(mediaCol);
 
   block.append(overlay);
 }
