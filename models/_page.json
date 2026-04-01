@@ -21,6 +21,21 @@
           "name": "keywords",
           "multi": true,
           "label": "Keywords"
+        },
+        {
+          "component": "select",
+          "name": "template",
+          "label": "Template",
+          "options": [
+            {
+              "name": "None",
+              "value": ""
+            },
+            {
+              "name": "Contact Us",
+              "value": "contact-us"
+            }
+          ]
         }
       ]
     }

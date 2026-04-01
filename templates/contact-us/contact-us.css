@@ -1,0 +1,6 @@
+/* Contact Us template styles */
+.contact-us-template .section:first-of-type {
+  background-color: var(--dark-color);
+  padding: 40px 0;
+  margin: 0;
+}

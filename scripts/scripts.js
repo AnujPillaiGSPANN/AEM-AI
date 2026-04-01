@@ -7,6 +7,7 @@ import {
   decorateBlocks,
   decorateTemplateAndTheme,
   getMetadata,
+  toClassName,
   waitForFirstImage,
   loadSection,
   loadSections,
@@ -70,6 +71,30 @@ function autolinkModals(doc) {
   });
 }
 
+const TEMPLATE_LIST = [
+  'contact-us',
+];
+
+/**
+ * Loads and decorates the page template based on metadata.
+ * @param {Element} main The main element
+ */
+async function decorateTemplates(main) {
+  try {
+    const template = toClassName(getMetadata('template'));
+    if (TEMPLATE_LIST.includes(template)) {
+      const mod = await import(`../templates/${template}/${template}.js`);
+      loadCSS(`${window.hlx.codeBasePath}/templates/${template}/${template}.css`);
+      if (mod.default) {
+        await mod.default(main);
+      }
+    }
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error('Template error:', err);
+  }
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -124,6 +149,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    await decorateTemplates(main);
     document.body.classList.add('appear');
     await loadSection(main.querySelector('.section'), waitForFirstImage);
   }
