@@ -258,37 +258,8 @@ main > .section:first-of-type {
 }
 
 /* section metadata */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: 40px 0;
-}
-
 main .section.dark {
   background-color: var(--dark-color);
-  color: #fff;
   margin: 0;
-  padding: 64px 0;
-}
-
-main .section.dark h1,
-main .section.dark h2,
-main .section.dark h3,
-main .section.dark h4,
-main .section.dark h5,
-main .section.dark h6 {
-  color: #fff;
-}
-
-main .section.dark p {
-  color: #d6d3d1;
-}
-
-main .section.dark a:any-link {
-  color: #fff;
-}
-
-main .section.dark a:hover {
-  color: var(--link-color);
+  padding: 40px 0;
 }

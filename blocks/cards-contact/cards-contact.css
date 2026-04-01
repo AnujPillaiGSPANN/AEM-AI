@@ -8,11 +8,16 @@
 }
 
 .cards-contact > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   padding: 24px;
   text-align: center;
-  background-color: #fff;
-  color: #1c1917;
   border-radius: 8px;
+  overflow: hidden;
+  min-width: 0;
+  background-color: #fff;
 }
 
 .cards-contact > ul > li a {
@@ -21,6 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 8px;
   height: 100%;
 }
 
@@ -30,7 +36,6 @@
 
 .cards-contact .cards-contact-card-image {
   line-height: 0;
-  margin-bottom: 16px;
 }
 
 .cards-contact .cards-contact-card-image img {
@@ -41,18 +46,18 @@
 
 .cards-contact .cards-contact-card-body {
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .cards-contact .cards-contact-card-body h3 {
-  margin: 0 0 8px;
+  margin: 8px 0;
   font-size: var(--heading-font-size-m);
   font-family: var(--heading-font-family);
   font-weight: 700;
-  color: #1c1917;
 }
 
 .cards-contact .cards-contact-card-body h3 a {
-  color: #1c1917;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -64,7 +69,6 @@
 .cards-contact .cards-contact-card-body p {
   margin: 0;
   font-size: var(--body-font-size-s);
-  color: #57534e;
   line-height: 1.5;
 }
 
