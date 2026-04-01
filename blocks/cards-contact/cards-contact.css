@@ -11,7 +11,8 @@
   padding: 24px;
   text-align: center;
   background-color: #fff;
-  color: var(--text-color);
+  color: #1c1917;
+  border-radius: 8px;
 }
 
 .cards-contact > ul > li a {
@@ -47,11 +48,11 @@
   font-size: var(--heading-font-size-m);
   font-family: var(--heading-font-family);
   font-weight: 700;
-  color: inherit;
+  color: #1c1917;
 }
 
 .cards-contact .cards-contact-card-body h3 a {
-  color: var(--text-color);
+  color: #1c1917;
   text-decoration: none;
 }
 
