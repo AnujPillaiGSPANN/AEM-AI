@@ -49,7 +49,7 @@
 }
 
 .cards-contact .cards-contact-card-body h3 {
-  margin: 0;
+  margin: 8px 0;
   font-size: var(--heading-font-size-m);
   font-family: var(--heading-font-family);
   font-weight: 700;

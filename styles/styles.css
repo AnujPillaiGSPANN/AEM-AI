@@ -258,3 +258,8 @@ main > .section:first-of-type {
 }
 
 /* section metadata */
+main .section.dark {
+  background-color: var(--dark-color);
+  margin: 0;
+  padding: 40px 0;
+}
