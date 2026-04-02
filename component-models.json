@@ -311,6 +311,31 @@
     ]
   },
   {
+    "id": "nav-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "label": "Label",
+        "description": "The visible text for this navigation link"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link",
+        "description": "The URL this navigation item points to"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Title",
+        "description": "Tooltip text shown on hover (optional)"
+      }
+    ]
+  },
+  {
     "id": "hero",
     "fields": [
       {

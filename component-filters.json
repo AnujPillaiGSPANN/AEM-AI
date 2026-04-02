@@ -76,6 +76,12 @@
     ]
   },
   {
+    "id": "header",
+    "components": [
+      "nav-item"
+    ]
+  },
+  {
     "id": "table",
     "components": [
       "table-row"
