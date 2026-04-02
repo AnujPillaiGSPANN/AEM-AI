@@ -152,6 +152,10 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
           }
         ]
       }
@@ -166,6 +170,25 @@
         "name": "summary",
         "value": "",
         "label": "Summary"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "card-contact",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Icon",
+        "multi": false
       },
       {
         "component": "richtext",
@@ -311,27 +334,42 @@
     ]
   },
   {
-    "id": "nav-item",
+    "id": "hero-banner",
     "fields": [
       {
-        "component": "text",
+        "component": "reference",
         "valueType": "string",
-        "name": "label",
-        "label": "Label",
-        "description": "The visible text for this navigation link"
-      },
-      {
-        "component": "aem-content",
-        "name": "link",
-        "label": "Link",
-        "description": "The URL this navigation item points to"
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "linkTitle",
-        "label": "Title",
-        "description": "Tooltip text shown on hover (optional)"
+        "name": "imageAlt",
+        "label": "Background Image Alt Text",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Content",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media",
+        "label": "Foreground Image/Video (optional)",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mediaAlt",
+        "label": "Foreground Media Alt Text",
+        "value": ""
       }
     ]
   },
