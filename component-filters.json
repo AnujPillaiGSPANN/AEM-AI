@@ -11,6 +11,7 @@
       "accordion",
       "button",
       "cards",
+      "cards-contact",
       "carousel",
       "columns",
       "embed",
@@ -31,6 +32,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "cards-contact",
+    "components": [
+      "card-contact"
     ]
   },
   {
