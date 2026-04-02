@@ -1,5 +1,7 @@
 /* hero-banner - full-width hero with background image, title, and CTA */
 
+/* Supports optional foreground image/video in a side-by-side layout */
+
 /* Remove wrapper max-width so the hero spans full viewport */
 .hero-banner-container .hero-banner-wrapper {
   max-width: unset;
@@ -12,6 +14,24 @@
   align-items: flex-end;
   min-height: 480px;
   overflow: hidden;
+}
+
+/* Foreground media */
+.hero-banner-media {
+  flex-shrink: 0;
+}
+
+.hero-banner-media picture {
+  display: block;
+}
+
+.hero-banner-media img,
+.hero-banner-media video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 30%);
 }
 
 /* Background image - absolute positioned behind content */
@@ -52,7 +72,8 @@
   padding: 48px 24px;
 }
 
-.hero-banner-content h1 {
+/* Text column */
+.hero-banner-text h1 {
   margin: 0 0 16px;
   color: var(--background-color);
   font-size: var(--heading-font-size-xxl);
@@ -61,7 +82,7 @@
   line-height: 1.15;
 }
 
-.hero-banner-content p {
+.hero-banner-text p {
   margin: 0 0 24px;
   color: var(--background-color);
   font-size: var(--body-font-size-m);
@@ -70,8 +91,8 @@
   opacity: 0.9;
 }
 
-/* CTA button - inherits global button styles, customized for hero context */
-.hero-banner-content a.button:any-link {
+/* CTA button */
+.hero-banner-text a.button:any-link {
   background-color: var(--background-color);
   color: var(--text-color);
   border-color: var(--background-color);
@@ -79,14 +100,29 @@
   padding: 0.7em 1.8em;
 }
 
-.hero-banner-content a.button:hover,
-.hero-banner-content a.button:focus {
+.hero-banner-text a.button:hover,
+.hero-banner-text a.button:focus {
   background-color: transparent;
   color: var(--background-color);
   border-color: var(--background-color);
 }
 
-/* Desktop */
+/* ------------------------------------------------
+   Side-by-side layout (when foreground media present)
+   ------------------------------------------------ */
+
+/* Mobile: stacked (text above, media below) */
+.hero-banner.hero-banner-with-media {
+  align-items: center;
+}
+
+.hero-banner.hero-banner-with-media .hero-banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Desktop: side by side */
 @media (width >= 900px) {
   .hero-banner {
     min-height: 600px;
@@ -96,7 +132,23 @@
     padding: 64px 32px;
   }
 
-  .hero-banner-content h1 {
+  .hero-banner-text h1 {
     font-size: var(--heading-font-size-xxl);
+  }
+
+  /* Split layout on desktop */
+  .hero-banner.hero-banner-with-media .hero-banner-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .hero-banner.hero-banner-with-media .hero-banner-text {
+    flex: 1 1 50%;
+  }
+
+  .hero-banner.hero-banner-with-media .hero-banner-media {
+    flex: 1 1 45%;
+    max-width: 45%;
   }
 }

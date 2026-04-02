@@ -331,7 +331,7 @@
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt Text",
+        "label": "Background Image Alt Text",
         "value": ""
       },
       {
@@ -340,6 +340,20 @@
         "value": "",
         "label": "Content",
         "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "media",
+        "label": "Foreground Image/Video (optional)",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "mediaAlt",
+        "label": "Foreground Media Alt Text",
+        "value": ""
       }
     ]
   },
