@@ -2,10 +2,24 @@ export default function decorate(block) {
   const rows = [...block.children];
   if (rows.length < 1) return;
 
-  // Row 0: background image
+  // Row 0: background image or video
   const imageRow = rows[0];
+  const bgVideo = imageRow.querySelector('a[href*=".mp4"], a[href*=".webm"], video');
   const picture = imageRow.querySelector('picture');
-  if (picture) {
+
+  if (bgVideo && bgVideo.tagName === 'A') {
+    const video = document.createElement('video');
+    video.src = bgVideo.href;
+    video.setAttribute('autoplay', '');
+    video.setAttribute('muted', '');
+    video.setAttribute('loop', '');
+    video.setAttribute('playsinline', '');
+    video.classList.add('hero-banner-bg');
+    block.prepend(video);
+  } else if (bgVideo) {
+    bgVideo.classList.add('hero-banner-bg');
+    block.prepend(bgVideo);
+  } else if (picture) {
     picture.classList.add('hero-banner-bg');
     block.prepend(picture);
   }

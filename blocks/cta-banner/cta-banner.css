@@ -1,0 +1,47 @@
+.cta-banner-container .cta-banner-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.cta-banner {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.cta-banner-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cta-banner-content h2,
+.cta-banner-content h3 {
+  color: var(--background-color);
+  margin: 0 0 16px;
+}
+
+.cta-banner-content p {
+  margin: 0 0 24px;
+  opacity: 0.85;
+}
+
+.cta-banner-content a.button:any-link {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-color: var(--background-color);
+  font-weight: 600;
+}
+
+.cta-banner-content a.button:hover,
+.cta-banner-content a.button:focus {
+  background-color: transparent;
+  color: var(--background-color);
+  border-color: var(--background-color);
+}
+
+@media (width >= 900px) {
+  .cta-banner {
+    padding: 80px 32px;
+  }
+}
