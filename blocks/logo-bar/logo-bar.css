@@ -1,0 +1,51 @@
+.logo-bar-container .logo-bar-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.logo-bar {
+  padding: 32px 24px;
+  background-color: var(--light-color);
+}
+
+.logo-bar-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-bar-item {
+  flex-shrink: 0;
+}
+
+.logo-bar-item img {
+  display: block;
+  max-height: 40px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+.logo-bar-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.logo-bar-item a:any-link {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .logo-bar {
+    padding: 40px 32px;
+  }
+
+  .logo-bar-logos {
+    gap: 24px 48px;
+  }
+}

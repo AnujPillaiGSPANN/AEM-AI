@@ -1,0 +1,100 @@
+.cards-carousel {
+  position: relative;
+}
+
+.cards-carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 0;
+}
+
+.cards-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-carousel-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  transition: box-shadow 0.2s;
+}
+
+.cards-carousel-card:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+}
+
+.cards-carousel-image picture {
+  display: block;
+}
+
+.cards-carousel-image img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.cards-carousel-text {
+  padding: 16px;
+}
+
+.cards-carousel-text p {
+  margin: 0 0 8px;
+  font-size: var(--body-font-size-xs);
+  color: var(--dark-color);
+}
+
+.cards-carousel-text h3,
+.cards-carousel-text h4 {
+  margin: 0 0 8px;
+  font-size: var(--body-font-size-m);
+}
+
+.cards-carousel-text a:any-link {
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+}
+
+/* Navigation buttons */
+.cards-carousel-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.cards-carousel-prev,
+.cards-carousel-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--dark-color);
+  background: var(--background-color);
+  color: var(--text-color);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.cards-carousel-prev:hover,
+.cards-carousel-next:hover {
+  background-color: var(--light-color);
+}
+
+@media (width >= 900px) {
+  .cards-carousel-card {
+    flex: 0 0 320px;
+  }
+}

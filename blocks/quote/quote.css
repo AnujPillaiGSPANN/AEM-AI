@@ -39,3 +39,35 @@
   content: '—';
   padding-right: 0.5ch;
 }
+
+/* Testimonial variant */
+.quote.testimonial blockquote {
+  padding: 32px 24px;
+  border-top: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+}
+
+.quote.testimonial blockquote .quote-quotation {
+  font-size: var(--heading-font-size-s);
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.quote.testimonial blockquote .quote-attribution {
+  text-align: left;
+  margin-top: 16px;
+  font-size: var(--body-font-size-s);
+  opacity: 0.8;
+}
+
+.quote.testimonial blockquote .quote-attribution p:first-child::before {
+  content: '';
+  padding-right: 0;
+}
+
+@media (width >= 900px) {
+  .quote.testimonial blockquote {
+    padding: 40px 32px;
+  }
+}
