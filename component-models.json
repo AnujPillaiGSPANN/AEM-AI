@@ -20,6 +20,22 @@
         "name": "keywords",
         "multi": true,
         "label": "Keywords"
+      },
+      {
+        "component": "select",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "None",
+            "value": ""
+          },
+          {
+            "name": "Landing Page",
+            "value": "landing-page"
+          }
+        ]
       }
     ]
   },
@@ -136,6 +152,10 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Dark",
+            "value": "dark"
           }
         ]
       }
@@ -161,20 +181,20 @@
     ]
   },
   {
-    "id": "cards-carousel",
+    "id": "card-contact",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Card Image",
+        "label": "Icon",
         "multi": false
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Card Content",
+        "label": "Text",
         "valueType": "string"
       }
     ]
@@ -221,6 +241,25 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "columns-info",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columns"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
       }
     ]
   },

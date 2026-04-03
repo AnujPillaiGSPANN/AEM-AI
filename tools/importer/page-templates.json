@@ -1,0 +1,119 @@
+{
+  "templates": [
+    {
+      "name": "contact-page",
+      "urls": [
+        "https://www.leica-microsystems.com/contact/contact-us-online/"
+      ],
+      "description": "Contact us online page with contact category cards and local office finder",
+      "blocks": [
+        {
+          "name": "cards-contact",
+          "instances": [
+            "#t3m-Section--ctaHub .grid"
+          ]
+        },
+        {
+          "name": "embed",
+          "instances": [
+            "#t3m-PartnerMap"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "contact-cards",
+          "name": "Contact Category Cards",
+          "selector": "#t3m-Section--ctaHub",
+          "style": "dark",
+          "blocks": [
+            "cards-contact"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "local-contact",
+          "name": "Local Contact Finder",
+          "selector": "#c561242",
+          "style": null,
+          "blocks": [
+            "embed"
+          ],
+          "defaultContent": [
+            "#c561243 h2"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.lipsum.com/"
+      ],
+      "description": "Lorem Ipsum homepage with content generation tool and reference information",
+      "blocks": [
+        {
+          "name": "columns-info",
+          "instances": [
+            "#Panes"
+          ]
+        },
+        {
+          "name": "form",
+          "instances": [
+            "#Panes form"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "Hero",
+          "selector": "#Inner",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#Inner > h1",
+            "#Inner > h4",
+            "#Inner > h5"
+          ]
+        },
+        {
+          "id": "main-content",
+          "name": "Main Content",
+          "selector": "#Panes",
+          "style": null,
+          "blocks": [
+            "columns-info",
+            "form"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "info-boxes",
+          "name": "Info Boxes",
+          "selector": [
+            "#Content > .boxed",
+            "#Packages"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#Content > .boxed"
+          ]
+        },
+        {
+          "id": "latin-reference",
+          "name": "Latin Reference",
+          "selector": "#Translation",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#Translation > h3",
+            "#Translation > p"
+          ]
+        }
+      ]
+    }
+  ]
+}
