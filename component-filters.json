@@ -11,6 +11,7 @@
       "accordion",
       "button",
       "cards",
+      "cards-contact",
       "carousel",
       "columns",
       "embed",
@@ -24,6 +25,7 @@
       "table",
       "text",
       "title",
+      "hero-banner",
       "video"
     ]
   },
@@ -31,6 +33,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "cards-contact",
+    "components": [
+      "card-contact"
     ]
   },
   {
@@ -43,6 +51,21 @@
     "id": "carousel",
     "components": [
       "carousel-item"
+    ]
+  },
+  {
+    "id": "columns-info",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {
