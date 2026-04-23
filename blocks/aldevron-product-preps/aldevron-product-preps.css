@@ -1,0 +1,123 @@
+.aldevron-product-preps {
+  background-color: #fff;
+  padding: 60px 20px;
+}
+
+.aldevron-product-preps-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.aldevron-product-preps-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.aldevron-product-preps-left h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--dark-color);
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.aldevron-product-preps-left p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.aldevron-product-preps-cta {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: var(--body-font-size-m);
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.aldevron-product-preps-cta:hover {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+.aldevron-product-preps-right {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.aldevron-product-preps-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.aldevron-product-preps-card:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+}
+
+.aldevron-product-preps-card-image {
+  margin-bottom: 16px;
+}
+
+.aldevron-product-preps-card-image img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.aldevron-product-preps-buy-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: var(--body-font-size-s);
+  transition: background-color 0.2s ease;
+}
+
+.aldevron-product-preps-buy-btn:hover {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+@media (width <= 768px) {
+  .aldevron-product-preps {
+    padding: 40px 16px;
+  }
+
+  .aldevron-product-preps-wrapper {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .aldevron-product-preps-right {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .aldevron-product-preps-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}

@@ -34,6 +34,12 @@
     ]
   },
   {
+    "id": "aldevron-hero-carousel",
+    "components": [
+      "aldevron-hero-carousel-slide"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"

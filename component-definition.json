@@ -115,6 +115,306 @@
           }
         },
         {
+          "title": "Aldevron About",
+          "id": "aldevron-about",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron About",
+                  "model": "aldevron-about"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Catalog Intro",
+          "id": "aldevron-catalog-intro",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron Catalog Intro",
+                  "model": "aldevron-catalog-intro"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Contact Us",
+          "id": "aldevron-contact-us",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron Contact Us",
+                  "model": "aldevron-contact-us"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Facilities",
+          "id": "aldevron-facilities",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron Facilities",
+                  "filter": "aldevron-facilities"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Facilities Intro",
+          "id": "aldevron-facilities-intro",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Aldevron Facilities Intro",
+                  "model": "aldevron-facilities-intro",
+                  "text": "<h2>Advanced Facilities</h2><p>Description text.</p><h3>Certifications & Inspections</h3><p>Paragraph text.</p>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Facility Card",
+          "id": "aldevron-facility-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Aldevron Facility Card",
+                  "model": "aldevron-facility-card",
+                  "image": "",
+                  "text": "<p><strong>Facility Name</strong></p><p>Location</p><p>Description text.</p><p><a href='#'>Learn More</a></p>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Featured Story",
+          "id": "aldevron-featured-story",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron Featured Story",
+                  "model": "aldevron-featured-story"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Hero Carousel",
+          "id": "aldevron-hero-carousel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron Hero Carousel",
+                  "filter": "aldevron-hero-carousel"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Hero Carousel Slide",
+          "id": "aldevron-hero-carousel-slide",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Aldevron Hero Carousel Slide",
+                  "model": "aldevron-hero-carousel-slide",
+                  "image": "",
+                  "text": "<h2>Slide Heading</h2><p>Slide description text.</p><p><a href=\"#\">Learn More</a></p>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Modalities",
+          "id": "aldevron-modalities",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron Modalities",
+                  "filter": "aldevron-modalities"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Modalities Card",
+          "id": "aldevron-modalities-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Aldevron Modalities Card",
+                  "model": "aldevron-modalities-card",
+                  "icon": "",
+                  "text": "<p><strong>Card Title</strong></p><p>Card description text.</p><p><a href=\"#\">Learn More</a></p>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Product Cards",
+          "id": "aldevron-product-cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron Product Cards",
+                  "filter": "aldevron-product-cards"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Product Card",
+          "id": "aldevron-product-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Aldevron Product Card",
+                  "model": "aldevron-product-card",
+                  "icon": "",
+                  "text": "<p><strong>Product Title</strong></p><p>Product description text.</p><p><a href=\"#\">Learn More</a></p>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Product Preps",
+          "id": "aldevron-product-preps",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron Product Preps",
+                  "filter": "aldevron-product-preps"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Product Preps Intro",
+          "id": "aldevron-product-preps-intro",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Aldevron Product Preps Intro",
+                  "model": "aldevron-product-preps-intro",
+                  "text": "<h2>Heading</h2><p>Description text.</p><p><a href='#'>Learn More</a></p>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Product Preps Card",
+          "id": "aldevron-product-preps-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Aldevron Product Preps Card",
+                  "model": "aldevron-product-preps-card",
+                  "image": "",
+                  "link": "<p><a href='#'>Buy Now</a></p>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Recent Posts",
+          "id": "aldevron-recent-posts",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Aldevron Recent Posts",
+                  "filter": "aldevron-recent-posts"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Recent Posts Column Header",
+          "id": "aldevron-recent-posts-header",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Aldevron Recent Posts Column Header",
+                  "model": "aldevron-recent-posts-header",
+                  "text": "<h2>Column Heading</h2>"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Aldevron Recent Posts Card",
+          "id": "aldevron-recent-posts-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Aldevron Recent Posts Card",
+                  "model": "aldevron-recent-posts-card",
+                  "image": "",
+                  "text": "<h3><a href='#'>Article Title</a></h3><p>Article description.</p>"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Cards Carousel",
           "id": "cards-carousel",
           "plugins": {

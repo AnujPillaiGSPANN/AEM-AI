@@ -1,0 +1,109 @@
+.aldevron-product-cards {
+  padding: 60px 20px;
+  background-color: var(--background-color);
+}
+
+.aldevron-product-cards-container {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.aldevron-product-cards-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.aldevron-product-cards-container::-webkit-scrollbar-thumb {
+  background: var(--dark-color);
+  border-radius: 3px;
+}
+
+.aldevron-product-card {
+  flex: 0 0 260px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+  padding: 28px 24px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.aldevron-product-card:hover {
+  box-shadow: 0 8px 24px rgb(0 0 0 / 14%);
+  transform: translateY(-2px);
+}
+
+.aldevron-product-card-icon {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.aldevron-product-card-icon img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.aldevron-product-card-content strong,
+.aldevron-product-card-content h3 {
+  font-family: var(--heading-font-family);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.aldevron-product-card-content p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.aldevron-product-card-link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--body-font-size-m);
+  margin-top: auto;
+}
+
+.aldevron-product-card-link:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 769px) {
+  .aldevron-product-cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    overflow-x: visible;
+    justify-content: center;
+  }
+
+  .aldevron-product-card {
+    flex: 0 0 calc(33.333% - 16px);
+  }
+}
+
+@media (width >= 1025px) {
+  .aldevron-product-card {
+    flex: 0 0 calc(20% - 20px);
+  }
+}
+
+@media (width <= 768px) {
+  .aldevron-product-cards {
+    padding: 40px 16px;
+  }
+
+  .aldevron-product-card {
+    flex: 0 0 240px;
+  }
+}

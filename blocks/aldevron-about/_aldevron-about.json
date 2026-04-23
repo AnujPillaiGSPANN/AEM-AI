@@ -1,0 +1,33 @@
+{
+  "definitions": [
+    {
+      "title": "Aldevron About",
+      "id": "aldevron-about",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Aldevron About",
+              "model": "aldevron-about"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "aldevron-about",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "content",
+          "value": "",
+          "label": "About Content (heading, description, CTA link)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ]
+}

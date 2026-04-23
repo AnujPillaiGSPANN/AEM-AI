@@ -161,6 +161,204 @@
     ]
   },
   {
+    "id": "aldevron-about",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "About Content (heading, description, CTA link)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-catalog-intro",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Content (heading, description, CTA link)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-contact-us",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Contact Content (heading, description, phone link, CTA button)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-facilities-intro",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Intro Content (headings, descriptions, certifications)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-facility-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "value": "",
+        "label": "Facility Image"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Card Content (name, location, description, link)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-featured-story",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Story Content (heading, body, bullet points, CTA)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-hero-carousel-slide",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "value": "",
+        "label": "Background Image"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Slide Content (heading, text, CTA)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-modalities-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "value": "",
+        "label": "Card Icon Image"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Card Content (title, description, link)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-product-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "icon",
+        "value": "",
+        "label": "Product Icon Image"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Card Content (title, description, link)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-product-preps-intro",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Intro Content (heading, description, CTA link)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-product-preps-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "value": "",
+        "label": "Product Image"
+      },
+      {
+        "component": "richtext",
+        "name": "link",
+        "value": "",
+        "label": "Buy Now Button Link",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-recent-posts-header",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Column Heading",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-recent-posts-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "value": "",
+        "label": "Article Thumbnail Image"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Card Content (linked title, description)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "cards-carousel",
     "fields": [
       {

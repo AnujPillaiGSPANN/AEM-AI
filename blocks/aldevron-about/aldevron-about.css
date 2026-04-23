@@ -1,0 +1,54 @@
+.aldevron-about {
+  background-color: #fff;
+  padding: 80px 20px;
+}
+
+.aldevron-about-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.aldevron-about-content h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  color: var(--dark-color);
+  margin: 0 0 1.5rem;
+  line-height: 1.2;
+}
+
+.aldevron-about-content p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  line-height: 1.8;
+  margin: 0 0 1.5rem;
+}
+
+.aldevron-about-cta {
+  display: inline-block;
+  padding: 14px 36px;
+  background-color: var(--link-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: var(--body-font-size-m);
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.aldevron-about-cta:hover {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+@media (width <= 768px) {
+  .aldevron-about {
+    padding: 48px 16px;
+  }
+
+  .aldevron-about-content h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+}

@@ -1,0 +1,117 @@
+.aldevron-facilities {
+  background-color: var(--light-color);
+  padding: 60px 20px;
+}
+
+.aldevron-facilities-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aldevron-facilities-intro {
+  margin-bottom: 48px;
+}
+
+.aldevron-facilities-intro h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  color: var(--dark-color);
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.aldevron-facilities-intro h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 600;
+  color: var(--dark-color);
+  margin: 2rem 0 1rem;
+}
+
+.aldevron-facilities-intro p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.aldevron-facilities-link {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.aldevron-facilities-link:hover {
+  color: var(--dark-color);
+}
+
+.aldevron-facilities-cards {
+  display: flex;
+  gap: 24px;
+}
+
+.aldevron-facilities-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.aldevron-facilities-card:hover {
+  box-shadow: 0 8px 24px rgb(0 0 0 / 14%);
+  transform: translateY(-2px);
+}
+
+.aldevron-facilities-card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.aldevron-facilities-card-content {
+  padding: 24px;
+}
+
+.aldevron-facilities-card-content strong {
+  font-family: var(--heading-font-family);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.aldevron-facilities-card-content p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+.aldevron-facilities-card-link {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--body-font-size-m);
+}
+
+.aldevron-facilities-card-link:hover {
+  text-decoration: underline;
+}
+
+@media (width <= 768px) {
+  .aldevron-facilities {
+    padding: 40px 16px;
+  }
+
+  .aldevron-facilities-cards {
+    flex-direction: column;
+  }
+
+  .aldevron-facilities-intro h2 {
+    font-size: var(--heading-font-size-xl);
+  }
+}
