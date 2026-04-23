@@ -1,30 +1,30 @@
 {
   "definitions": [
     {
-      "title": "Aldevron Modalities",
-      "id": "aldevron-modalities",
+      "title": "Aldevron Plasmid Preps",
+      "id": "aldevron-plasmid-preps",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Aldevron Modalities",
-              "filter": "aldevron-modalities"
+              "name": "Aldevron Plasmid Preps",
+              "filter": "aldevron-plasmid-preps"
             }
           }
         }
       }
     },
     {
-      "title": "Aldevron Modality Card",
-      "id": "aldevron-modality-card",
+      "title": "Aldevron Plasmid Prep Item",
+      "id": "aldevron-plasmid-prep-item",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Aldevron Modality Card",
-              "model": "aldevron-modality-card"
+              "name": "Aldevron Plasmid Prep Item",
+              "model": "aldevron-plasmid-prep-item"
             }
           }
         }
@@ -33,20 +33,20 @@
   ],
   "models": [
     {
-      "id": "aldevron-modality-card",
+      "id": "aldevron-plasmid-prep-item",
       "fields": [
         {
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Icon",
+          "label": "Image",
           "multi": false
         },
         {
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Card Content",
+          "label": "Content",
           "valueType": "string"
         }
       ]
@@ -54,8 +54,8 @@
   ],
   "filters": [
     {
-      "id": "aldevron-modalities",
-      "components": ["aldevron-modality-card"]
+      "id": "aldevron-plasmid-preps",
+      "components": ["aldevron-plasmid-prep-item"]
     }
   ]
 }

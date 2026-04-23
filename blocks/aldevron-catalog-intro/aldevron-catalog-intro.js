@@ -1,20 +1,19 @@
 export default function decorate(block) {
-  const rows = [...block.children];
-
   const wrapper = document.createElement('div');
-  wrapper.className = 'aldevron-catalog-intro-wrapper';
+  wrapper.className = 'aldevron-catalog-intro-content';
 
-  rows.forEach((row) => {
-    const content = row.children[0];
-    if (content) {
-      wrapper.innerHTML += content.innerHTML;
+  [...block.children].forEach((row) => {
+    while (row.firstElementChild) {
+      const child = row.firstElementChild;
+      wrapper.append(child);
     }
-    row.remove();
   });
 
-  // Style CTA links as buttons
-  wrapper.querySelectorAll('a').forEach((a) => {
-    a.classList.add('aldevron-catalog-intro-cta');
+  wrapper.querySelectorAll('a').forEach((link) => {
+    const parent = link.parentElement;
+    if (parent.tagName === 'P' && parent.children.length === 1 && parent.textContent.trim() === link.textContent.trim()) {
+      link.classList.add('cta');
+    }
   });
 
   block.textContent = '';

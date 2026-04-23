@@ -1,42 +1,35 @@
+import { createOptimizedPicture } from '../../scripts/aem.js';
+
 export default function decorate(block) {
-  const rows = [...block.children];
+  const ul = document.createElement('ul');
 
-  const scrollContainer = document.createElement('div');
-  scrollContainer.className = 'aldevron-product-cards-container';
+  [...block.children].forEach((row) => {
+    const li = document.createElement('li');
 
-  rows.forEach((row) => {
-    const cols = [...row.children];
-    const card = document.createElement('div');
-    card.className = 'aldevron-product-card';
+    [...row.children].forEach((col) => {
+      if (col.children.length === 1 && col.querySelector('picture')) {
+        col.className = 'aldevron-product-cards-card-icon';
+      } else {
+        col.className = 'aldevron-product-cards-card-body';
+      }
+      li.append(col);
+    });
 
-    // Column 1: product icon/image
-    const iconCol = cols[0];
-    if (iconCol) {
-      const iconWrapper = document.createElement('div');
-      iconWrapper.className = 'aldevron-product-card-icon';
-      const pic = iconCol.querySelector('picture');
-      if (pic) iconWrapper.append(pic);
-      card.append(iconWrapper);
-    }
+    li.querySelectorAll('picture > img').forEach((img) => {
+      const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '200' }]);
+      img.closest('picture').replaceWith(optimizedPic);
+    });
 
-    // Column 2: title, description, link
-    const contentCol = cols[1];
-    if (contentCol) {
-      const contentDiv = document.createElement('div');
-      contentDiv.className = 'aldevron-product-card-content';
-      contentDiv.innerHTML = contentCol.innerHTML;
+    li.querySelectorAll('a').forEach((link) => {
+      const parent = link.parentElement;
+      if (parent.tagName === 'P' && parent.children.length === 1) {
+        link.classList.add('learn-more');
+      }
+    });
 
-      contentDiv.querySelectorAll('a').forEach((a) => {
-        a.classList.add('aldevron-product-card-link');
-      });
-
-      card.append(contentDiv);
-    }
-
-    scrollContainer.append(card);
-    row.remove();
+    ul.append(li);
   });
 
   block.textContent = '';
-  block.append(scrollContainer);
+  block.append(ul);
 }

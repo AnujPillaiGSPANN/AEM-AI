@@ -165,9 +165,9 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "content",
+        "name": "text",
         "value": "",
-        "label": "About Content (heading, description, CTA link)",
+        "label": "Content",
         "valueType": "string"
       }
     ]
@@ -177,9 +177,9 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "content",
+        "name": "text",
         "value": "",
-        "label": "Content (heading, description, CTA link)",
+        "label": "Content",
         "valueType": "string"
       }
     ]
@@ -189,40 +189,28 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "content",
-        "value": "",
-        "label": "Contact Content (heading, description, phone link, CTA button)",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "aldevron-facilities-intro",
-    "fields": [
-      {
-        "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Intro Content (headings, descriptions, certifications)",
+        "label": "Content",
         "valueType": "string"
       }
     ]
   },
   {
-    "id": "aldevron-facility-card",
+    "id": "aldevron-facility",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "value": "",
-        "label": "Facility Image"
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Card Content (name, location, description, link)",
+        "label": "Content",
         "valueType": "string"
       }
     ]
@@ -232,47 +220,66 @@
     "fields": [
       {
         "component": "richtext",
-        "name": "content",
+        "name": "text",
         "value": "",
-        "label": "Story Content (heading, body, bullet points, CTA)",
+        "label": "Content",
         "valueType": "string"
       }
     ]
   },
   {
-    "id": "aldevron-hero-carousel-slide",
+    "id": "aldevron-hero-slide",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "value": "",
-        "label": "Background Image"
+        "label": "Background Image",
+        "multi": false
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Slide Content (heading, text, CTA)",
+        "label": "Slide Content",
         "valueType": "string"
       }
     ]
   },
   {
-    "id": "aldevron-modalities-card",
+    "id": "aldevron-modality-card",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
-        "name": "icon",
-        "value": "",
-        "label": "Card Icon Image"
+        "name": "image",
+        "label": "Icon",
+        "multi": false
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Card Content (title, description, link)",
+        "label": "Card Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "aldevron-plasmid-prep-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Content",
         "valueType": "string"
       }
     ]
@@ -284,76 +291,26 @@
         "component": "reference",
         "valueType": "string",
         "name": "icon",
-        "value": "",
-        "label": "Product Icon Image"
+        "label": "Icon",
+        "multi": false
       },
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Card Content (title, description, link)",
+        "label": "Content",
         "valueType": "string"
       }
     ]
   },
   {
-    "id": "aldevron-product-preps-intro",
+    "id": "aldevron-recent-posts",
     "fields": [
       {
         "component": "richtext",
         "name": "text",
         "value": "",
-        "label": "Intro Content (heading, description, CTA link)",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "aldevron-product-preps-card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "value": "",
-        "label": "Product Image"
-      },
-      {
-        "component": "richtext",
-        "name": "link",
-        "value": "",
-        "label": "Buy Now Button Link",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "aldevron-recent-posts-header",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Column Heading",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "aldevron-recent-posts-card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "value": "",
-        "label": "Article Thumbnail Image"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Card Content (linked title, description)",
+        "label": "Content",
         "valueType": "string"
       }
     ]

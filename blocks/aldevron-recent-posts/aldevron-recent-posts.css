@@ -1,104 +1,66 @@
 .aldevron-recent-posts {
-  background-color: #fff;
-  padding: 60px 20px;
-}
-
-.aldevron-recent-posts-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 48px 16px;
   display: flex;
-  gap: 48px;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.aldevron-recent-posts-column {
-  flex: 1;
-  min-width: 0;
-}
-
-.aldevron-recent-posts-header h2 {
+.aldevron-recent-posts .aldevron-recent-posts-heading h2 {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-xl);
-  font-weight: 700;
+  font-size: var(--heading-font-size-l);
+  margin-bottom: 24px;
   color: var(--dark-color);
-  margin: 0 0 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--link-color);
 }
 
-.aldevron-recent-posts-card {
+.aldevron-recent-posts .aldevron-recent-posts-cards {
   display: flex;
-  gap: 16px;
-  padding: 20px 0;
-  border-bottom: 1px solid #e0e0e0;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.aldevron-recent-posts-card:last-child {
-  border-bottom: none;
-}
-
-.aldevron-recent-posts-card-image {
-  flex-shrink: 0;
-  width: 120px;
-  height: 90px;
+.aldevron-recent-posts .aldevron-recent-posts-card {
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: 8px;
   overflow: hidden;
-  border-radius: 4px;
+  background-color: var(--background-color);
 }
 
-.aldevron-recent-posts-card-image img {
+.aldevron-recent-posts .aldevron-recent-posts-card img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
 }
 
-.aldevron-recent-posts-card-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.aldevron-recent-posts-card-content h3 {
+.aldevron-recent-posts .aldevron-recent-posts-card h3 {
   font-family: var(--heading-font-family);
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: var(--heading-font-size-m);
+  margin: 16px;
   color: var(--dark-color);
-  margin: 0 0 8px;
-  line-height: 1.3;
 }
 
-.aldevron-recent-posts-card-content h3 a {
+.aldevron-recent-posts .aldevron-recent-posts-card h3 a {
   color: var(--dark-color);
   text-decoration: none;
 }
 
-.aldevron-recent-posts-card-content h3 a:hover {
-  color: var(--link-color);
-  text-decoration: underline;
+.aldevron-recent-posts .aldevron-recent-posts-card h3 a:hover {
+  color: var(--link-hover-color);
 }
 
-.aldevron-recent-posts-card-content p {
+.aldevron-recent-posts .aldevron-recent-posts-card p {
   font-size: var(--body-font-size-s);
   color: var(--text-color);
-  line-height: 1.6;
-  margin: 0;
+  line-height: 1.5;
+  margin: 0 16px 16px;
 }
 
-@media (width <= 768px) {
+@media (width >= 900px) {
   .aldevron-recent-posts {
-    padding: 40px 16px;
+    flex-direction: row;
   }
 
-  .aldevron-recent-posts-wrapper {
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  .aldevron-recent-posts-card {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .aldevron-recent-posts-card-image {
-    width: 100%;
-    height: 180px;
+  .aldevron-recent-posts .aldevron-recent-posts-column {
+    flex: 1;
   }
 }

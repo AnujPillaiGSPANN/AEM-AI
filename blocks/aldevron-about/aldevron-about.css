@@ -1,54 +1,53 @@
 .aldevron-about {
-  background-color: #fff;
-  padding: 80px 20px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
 }
 
-.aldevron-about-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
+.aldevron-about .aldevron-about-overlay {
+  background-color: rgb(0 0 0 / 60%);
+  padding: 64px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aldevron-about .aldevron-about-content {
+  max-width: 800px;
   text-align: center;
+  color: var(--background-color);
 }
 
-.aldevron-about-content h2 {
+.aldevron-about .aldevron-about-content h2 {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-xxl);
-  font-weight: 700;
-  color: var(--dark-color);
-  margin: 0 0 1.5rem;
-  line-height: 1.2;
+  font-size: var(--heading-font-size-l);
+  margin-bottom: 16px;
+  color: var(--background-color);
 }
 
-.aldevron-about-content p {
+.aldevron-about .aldevron-about-content p {
+  font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  color: var(--text-color);
-  line-height: 1.8;
-  margin: 0 0 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: var(--background-color);
 }
 
-.aldevron-about-cta {
+.aldevron-about a.cta {
   display: inline-block;
-  padding: 14px 36px;
-  background-color: var(--link-color);
-  color: #fff;
+  padding: 12px 32px;
+  border: 2px solid var(--background-color);
+  color: var(--background-color);
+  background-color: transparent;
   text-decoration: none;
   border-radius: 4px;
   font-weight: 600;
-  font-size: var(--body-font-size-m);
-  margin-top: 0.5rem;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.aldevron-about-cta:hover {
-  background-color: var(--dark-color);
-  color: #fff;
-}
-
-@media (width <= 768px) {
-  .aldevron-about {
-    padding: 48px 16px;
-  }
-
-  .aldevron-about-content h2 {
-    font-size: var(--heading-font-size-xl);
-  }
+.aldevron-about a.cta:hover {
+  background-color: var(--background-color);
+  color: var(--dark-color);
 }

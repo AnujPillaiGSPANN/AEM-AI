@@ -1,76 +1,53 @@
-export default function decorate(block) {
-  const rows = [...block.children];
+import { createOptimizedPicture } from '../../scripts/aem.js';
 
-  const wrapper = document.createElement('div');
-  wrapper.className = 'aldevron-recent-posts-wrapper';
+function buildArticleCard(container) {
+  const card = document.createElement('div');
+  card.className = 'aldevron-recent-posts-card';
 
-  // Build two columns: news and blog
-  const newsCol = document.createElement('div');
-  newsCol.className = 'aldevron-recent-posts-column';
+  while (container.firstElementChild) {
+    card.append(container.firstElementChild);
+  }
 
-  const blogCol = document.createElement('div');
-  blogCol.className = 'aldevron-recent-posts-column';
-
-  let currentColumn = null;
-
-  rows.forEach((row) => {
-    const cols = [...row.children];
-    const content = cols[0];
-
-    if (content) {
-      const heading = content.querySelector('h2');
-
-      if (heading) {
-        // This is a column header row
-        const header = document.createElement('div');
-        header.className = 'aldevron-recent-posts-header';
-        header.append(heading);
-
-        if (!newsCol.querySelector('.aldevron-recent-posts-header')) {
-          newsCol.append(header);
-          currentColumn = newsCol;
-        } else {
-          blogCol.append(header);
-          currentColumn = blogCol;
-        }
-      } else if (currentColumn) {
-        // This is a card row
-        const card = document.createElement('div');
-        card.className = 'aldevron-recent-posts-card';
-
-        const imageCol = cols[0];
-        const textCol = cols[1] || cols[0];
-
-        if (cols[1]) {
-          // Two columns: image + text
-          const imageWrapper = document.createElement('div');
-          imageWrapper.className = 'aldevron-recent-posts-card-image';
-          const pic = imageCol.querySelector('picture');
-          if (pic) imageWrapper.append(pic);
-          card.append(imageWrapper);
-
-          const contentDiv = document.createElement('div');
-          contentDiv.className = 'aldevron-recent-posts-card-content';
-          contentDiv.innerHTML = textCol.innerHTML;
-          card.append(contentDiv);
-        } else {
-          // Single column with mixed content
-          const contentDiv = document.createElement('div');
-          contentDiv.className = 'aldevron-recent-posts-card-content';
-          contentDiv.innerHTML = content.innerHTML;
-          card.append(contentDiv);
-        }
-
-        currentColumn.append(card);
-      }
-    }
-
-    row.remove();
+  card.querySelectorAll('picture > img').forEach((img) => {
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '400' }]);
+    img.closest('picture').replaceWith(optimizedPic);
   });
 
-  wrapper.append(newsCol);
-  wrapper.append(blogCol);
+  return card;
+}
+
+export default function decorate(block) {
+  const rows = [...block.children];
+  const columns = [];
+  let currentColumn = null;
+
+  rows.forEach((row, index) => {
+    const cells = [...row.children];
+    if (index % 2 === 0) {
+      currentColumn = document.createElement('div');
+      currentColumn.className = 'aldevron-recent-posts-column';
+      const heading = document.createElement('div');
+      heading.className = 'aldevron-recent-posts-heading';
+      cells.forEach((cell) => {
+        while (cell.firstElementChild) {
+          heading.append(cell.firstElementChild);
+        }
+      });
+      currentColumn.append(heading);
+      columns.push(currentColumn);
+    } else if (currentColumn) {
+      const cardsWrapper = document.createElement('div');
+      cardsWrapper.className = 'aldevron-recent-posts-cards';
+      cells.forEach((cell) => {
+        const card = buildArticleCard(cell);
+        cardsWrapper.append(card);
+      });
+      currentColumn.append(cardsWrapper);
+    }
+  });
 
   block.textContent = '';
-  block.append(wrapper);
+  columns.forEach((col) => {
+    block.append(col);
+  });
 }

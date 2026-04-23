@@ -1,34 +1,21 @@
 export default function decorate(block) {
-  const rows = [...block.children];
+  const content = document.createElement('div');
+  content.classList.add('aldevron-featured-story-content');
 
-  const wrapper = document.createElement('div');
-  wrapper.className = 'aldevron-featured-story-wrapper';
-
-  rows.forEach((row) => {
-    const cols = [...row.children];
-    const content = cols[0];
-
-    if (content) {
-      const section = document.createElement('div');
-      section.className = 'aldevron-featured-story-section';
-      section.innerHTML = content.innerHTML;
-
-      // Style emphasis items as bullet highlights
-      section.querySelectorAll('em').forEach((em) => {
-        em.closest('li')?.classList.add('aldevron-featured-story-highlight');
-      });
-
-      // Style CTA links as buttons
-      section.querySelectorAll('p > strong > a, p > a:only-child').forEach((a) => {
-        a.classList.add('aldevron-featured-story-cta');
-      });
-
-      wrapper.append(section);
+  [...block.children].forEach((row) => {
+    while (row.firstElementChild) {
+      const cell = row.firstElementChild;
+      while (cell.firstChild) content.append(cell.firstChild);
+      cell.remove();
     }
-
     row.remove();
   });
 
-  block.textContent = '';
-  block.append(wrapper);
+  content.querySelectorAll('a').forEach((link) => {
+    if (link.parentElement.tagName === 'P' && link.parentElement.children.length === 1) {
+      link.classList.add('aldevron-featured-story-cta');
+    }
+  });
+
+  block.append(content);
 }

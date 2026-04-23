@@ -22,12 +22,13 @@
       "fields": [
         {
           "component": "richtext",
-          "name": "content",
+          "name": "text",
           "value": "",
-          "label": "Story Content (heading, body, bullet points, CTA)",
+          "label": "Content",
           "valueType": "string"
         }
       ]
     }
-  ]
+  ],
+  "filters": []
 }

@@ -1,67 +1,53 @@
 .aldevron-contact-us {
   background-color: var(--dark-color);
-  padding: 80px 20px;
-}
-
-.aldevron-contact-us-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 64px 16px;
   text-align: center;
 }
 
-.aldevron-contact-us-content h2 {
+.aldevron-contact-us .aldevron-contact-us-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aldevron-contact-us h2 {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-xxl);
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 1.5rem;
-  line-height: 1.2;
+  font-size: var(--heading-font-size-l);
+  color: var(--background-color);
+  margin-bottom: 16px;
 }
 
-.aldevron-contact-us-content p {
+.aldevron-contact-us p {
+  font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
-  color: #fff;
-  line-height: 1.8;
-  margin: 0 0 1.5rem;
+  color: var(--background-color);
+  line-height: 1.6;
+  margin-bottom: 16px;
 }
 
-.aldevron-contact-us-phone {
-  color: #fff;
+.aldevron-contact-us a.phone-link {
+  color: var(--background-color);
   text-decoration: underline;
   font-size: var(--body-font-size-m);
   font-weight: 600;
-  transition: opacity 0.2s ease;
 }
 
-.aldevron-contact-us-phone:hover {
-  color: #fff;
-  opacity: 0.8;
+.aldevron-contact-us a.phone-link:hover {
+  color: var(--light-color);
 }
 
-.aldevron-contact-us-cta {
+.aldevron-contact-us a.cta {
   display: inline-block;
-  padding: 14px 36px;
-  background-color: #fff;
+  padding: 12px 32px;
+  background-color: var(--background-color);
   color: var(--dark-color);
   text-decoration: none;
   border-radius: 4px;
   font-weight: 600;
-  font-size: var(--body-font-size-m);
-  margin-top: 0.5rem;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.aldevron-contact-us-cta:hover {
-  background-color: var(--light-color);
-  color: var(--dark-color);
-}
-
-@media (width <= 768px) {
-  .aldevron-contact-us {
-    padding: 48px 16px;
-  }
-
-  .aldevron-contact-us-content h2 {
-    font-size: var(--heading-font-size-xl);
-  }
+.aldevron-contact-us a.cta:hover {
+  background-color: transparent;
+  color: var(--background-color);
+  outline: 2px solid var(--background-color);
 }

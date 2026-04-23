@@ -9,6 +9,7 @@
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Aldevron Hero Carousel",
+              "model": "aldevron-hero-carousel",
               "filter": "aldevron-hero-carousel"
             }
           }
@@ -16,17 +17,15 @@
       }
     },
     {
-      "title": "Aldevron Hero Carousel Slide",
-      "id": "aldevron-hero-carousel-slide",
+      "title": "Aldevron Hero Slide",
+      "id": "aldevron-hero-slide",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Aldevron Hero Carousel Slide",
-              "model": "aldevron-hero-carousel-slide",
-              "image": "",
-              "text": "<h2>Slide Heading</h2><p>Slide description text.</p><p><a href=\"#\">Learn More</a></p>"
+              "name": "Aldevron Hero Slide",
+              "model": "aldevron-hero-slide"
             }
           }
         }
@@ -35,20 +34,20 @@
   ],
   "models": [
     {
-      "id": "aldevron-hero-carousel-slide",
+      "id": "aldevron-hero-slide",
       "fields": [
         {
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "value": "",
-          "label": "Background Image"
+          "label": "Background Image",
+          "multi": false
         },
         {
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Slide Content (heading, text, CTA)",
+          "label": "Slide Content",
           "valueType": "string"
         }
       ]
@@ -57,7 +56,7 @@
   "filters": [
     {
       "id": "aldevron-hero-carousel",
-      "components": ["aldevron-hero-carousel-slide"]
+      "components": ["aldevron-hero-slide"]
     }
   ]
 }

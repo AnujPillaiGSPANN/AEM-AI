@@ -16,33 +16,15 @@
       }
     },
     {
-      "title": "Aldevron Facilities Intro",
-      "id": "aldevron-facilities-intro",
+      "title": "Aldevron Facility",
+      "id": "aldevron-facility",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Aldevron Facilities Intro",
-              "model": "aldevron-facilities-intro",
-              "text": "<h2>Advanced Facilities</h2><p>Description text.</p><h3>Certifications & Inspections</h3><p>Paragraph text.</p>"
-            }
-          }
-        }
-      }
-    },
-    {
-      "title": "Aldevron Facility Card",
-      "id": "aldevron-facility-card",
-      "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/block/v1/block/item",
-            "template": {
-              "name": "Aldevron Facility Card",
-              "model": "aldevron-facility-card",
-              "image": "",
-              "text": "<p><strong>Facility Name</strong></p><p>Location</p><p>Description text.</p><p><a href='#'>Learn More</a></p>"
+              "name": "Aldevron Facility",
+              "model": "aldevron-facility"
             }
           }
         }
@@ -51,32 +33,20 @@
   ],
   "models": [
     {
-      "id": "aldevron-facilities-intro",
-      "fields": [
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Intro Content (headings, descriptions, certifications)",
-          "valueType": "string"
-        }
-      ]
-    },
-    {
-      "id": "aldevron-facility-card",
+      "id": "aldevron-facility",
       "fields": [
         {
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "value": "",
-          "label": "Facility Image"
+          "label": "Image",
+          "multi": false
         },
         {
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Card Content (name, location, description, link)",
+          "label": "Content",
           "valueType": "string"
         }
       ]
@@ -85,10 +55,7 @@
   "filters": [
     {
       "id": "aldevron-facilities",
-      "components": [
-        "aldevron-facilities-intro",
-        "aldevron-facility-card"
-      ]
+      "components": ["aldevron-facility"]
     }
   ]
 }

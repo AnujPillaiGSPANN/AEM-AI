@@ -1,34 +1,24 @@
 export default function decorate(block) {
-  const rows = [...block.children];
-
   const wrapper = document.createElement('div');
-  wrapper.className = 'aldevron-contact-us-wrapper';
+  wrapper.className = 'aldevron-contact-us-content';
 
-  rows.forEach((row) => {
-    const cols = [...row.children];
-    const content = cols[0];
+  [...block.children].forEach((row) => {
+    [...row.children].forEach((col) => {
+      while (col.firstElementChild) {
+        wrapper.append(col.firstElementChild);
+      }
+    });
+  });
 
-    if (content) {
-      const section = document.createElement('div');
-      section.className = 'aldevron-contact-us-content';
-      section.innerHTML = content.innerHTML;
-
-      // Style phone number links
-      section.querySelectorAll('a[href^="tel:"]').forEach((a) => {
-        a.classList.add('aldevron-contact-us-phone');
-      });
-
-      // Style CTA links as buttons (exclude phone links)
-      section.querySelectorAll('p > strong > a, p > a:only-child').forEach((a) => {
-        if (!a.classList.contains('aldevron-contact-us-phone')) {
-          a.classList.add('aldevron-contact-us-cta');
-        }
-      });
-
-      wrapper.append(section);
+  wrapper.querySelectorAll('a').forEach((link) => {
+    if (link.href && link.href.startsWith('tel:')) {
+      link.classList.add('phone-link');
+    } else {
+      const parent = link.parentElement;
+      if (parent.tagName === 'P' && parent.children.length === 1 && parent.textContent.trim() === link.textContent.trim()) {
+        link.classList.add('cta');
+      }
     }
-
-    row.remove();
   });
 
   block.textContent = '';

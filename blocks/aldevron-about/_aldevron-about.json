@@ -22,12 +22,13 @@
       "fields": [
         {
           "component": "richtext",
-          "name": "content",
+          "name": "text",
           "value": "",
-          "label": "About Content (heading, description, CTA link)",
+          "label": "Content",
           "valueType": "string"
         }
       ]
     }
-  ]
+  ],
+  "filters": []
 }

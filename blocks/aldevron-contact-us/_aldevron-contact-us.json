@@ -22,12 +22,13 @@
       "fields": [
         {
           "component": "richtext",
-          "name": "content",
+          "name": "text",
           "value": "",
-          "label": "Contact Content (heading, description, phone link, CTA button)",
+          "label": "Content",
           "valueType": "string"
         }
       ]
     }
-  ]
+  ],
+  "filters": []
 }

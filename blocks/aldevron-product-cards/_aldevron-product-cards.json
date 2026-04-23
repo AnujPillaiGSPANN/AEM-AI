@@ -24,9 +24,7 @@
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
               "name": "Aldevron Product Card",
-              "model": "aldevron-product-card",
-              "icon": "",
-              "text": "<p><strong>Product Title</strong></p><p>Product description text.</p><p><a href=\"#\">Learn More</a></p>"
+              "model": "aldevron-product-card"
             }
           }
         }
@@ -41,14 +39,14 @@
           "component": "reference",
           "valueType": "string",
           "name": "icon",
-          "value": "",
-          "label": "Product Icon Image"
+          "label": "Icon",
+          "multi": false
         },
         {
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Card Content (title, description, link)",
+          "label": "Content",
           "valueType": "string"
         }
       ]

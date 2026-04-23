@@ -4,7 +4,7 @@ export default function decorate(block) {
   const rows = [...block.children];
   const introRow = rows.shift();
   const introDiv = document.createElement('div');
-  introDiv.className = 'aldevron-facilities-intro';
+  introDiv.className = 'aldevron-plasmid-preps-intro';
 
   if (introRow) {
     [...introRow.children].forEach((col) => {
@@ -14,20 +14,23 @@ export default function decorate(block) {
     });
   }
 
+  introDiv.querySelectorAll('a').forEach((link) => {
+    const parent = link.parentElement;
+    if (parent.tagName === 'P' && parent.children.length === 1 && parent.textContent.trim() === link.textContent.trim()) {
+      link.classList.add('cta');
+    }
+  });
+
   const cardsDiv = document.createElement('div');
-  cardsDiv.className = 'aldevron-facilities-cards';
+  cardsDiv.className = 'aldevron-plasmid-preps-cards';
 
   rows.forEach((row) => {
     const card = document.createElement('div');
-    card.className = 'aldevron-facilities-card';
+    card.className = 'aldevron-plasmid-preps-card';
 
     [...row.children].forEach((col) => {
-      if (col.children.length === 1 && col.querySelector('picture')) {
-        col.className = 'aldevron-facilities-card-image';
-        card.append(col);
-      } else {
-        col.className = 'aldevron-facilities-card-body';
-        card.append(col);
+      while (col.firstElementChild) {
+        card.append(col.firstElementChild);
       }
     });
 
@@ -39,7 +42,7 @@ export default function decorate(block) {
     card.querySelectorAll('a').forEach((link) => {
       const parent = link.parentElement;
       if (parent.tagName === 'P' && parent.children.length === 1) {
-        link.classList.add('learn-more');
+        link.classList.add('buy-now');
       }
     });
 

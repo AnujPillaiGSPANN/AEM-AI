@@ -1,103 +1,74 @@
-.aldevron-modalities {
-  padding: 60px 20px;
-  background-color: var(--background-color);
-}
-
-.aldevron-modalities-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .aldevron-modalities-header {
   text-align: center;
-  margin-bottom: 40px;
+  max-width: 800px;
+  margin: 0 auto 32px;
 }
 
 .aldevron-modalities-header h2 {
-  font-family: var(--heading-font-family);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--dark-color);
-  margin: 0 0 1rem;
+  font-size: var(--heading-font-size-xl);
+  margin: 0 0 16px;
 }
 
 .aldevron-modalities-header p {
-  font-size: var(--body-font-size-m);
-  color: var(--text-color);
-  max-width: 700px;
-  margin: 0 auto;
+  color: var(--dark-color);
   line-height: 1.6;
 }
 
 .aldevron-modalities-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
 .aldevron-modalities-card {
   background-color: var(--light-color);
   border-radius: 8px;
-  padding: 32px 24px;
+  padding: 24px;
   text-align: center;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  transition: box-shadow 0.2s;
 }
 
 .aldevron-modalities-card:hover {
-  box-shadow: 0 8px 24px rgb(0 0 0 / 12%);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
 }
 
-.aldevron-modalities-card-icon {
+.aldevron-modalities-icon {
   margin-bottom: 16px;
 }
 
-.aldevron-modalities-card-icon img {
-  width: 64px;
-  height: 64px;
+.aldevron-modalities-icon img {
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 
-.aldevron-modalities-card-content strong,
-.aldevron-modalities-card-content h3 {
-  font-family: var(--heading-font-family);
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--dark-color);
+.aldevron-modalities-text strong {
   display: block;
+  font-size: var(--body-font-size-m);
   margin-bottom: 8px;
 }
 
-.aldevron-modalities-card-content p {
-  font-size: var(--body-font-size-m);
-  color: var(--text-color);
-  line-height: 1.5;
-  margin: 0 0 12px;
+.aldevron-modalities-text p {
+  margin: 0 0 8px;
+  font-size: var(--body-font-size-s);
+  color: var(--dark-color);
 }
 
-.aldevron-modalities-link {
-  color: var(--link-color);
-  text-decoration: none;
+.aldevron-modalities-text a {
   font-weight: 600;
-  font-size: var(--body-font-size-m);
 }
 
-.aldevron-modalities-link:hover {
-  text-decoration: underline;
-}
-
-@media (width <= 1024px) {
+@media (width >= 600px) {
   .aldevron-modalities-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (width <= 600px) {
+@media (width >= 900px) {
   .aldevron-modalities-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .aldevron-modalities {
-    padding: 40px 16px;
+    grid-template-columns: repeat(4, 1fr);
   }
 }

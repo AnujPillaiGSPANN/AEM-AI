@@ -1,29 +1,26 @@
 export default function decorate(block) {
-  const rows = [...block.children];
-
   const wrapper = document.createElement('div');
-  wrapper.className = 'aldevron-about-wrapper';
+  wrapper.className = 'aldevron-about-content';
 
-  rows.forEach((row) => {
-    const cols = [...row.children];
-    const content = cols[0];
+  [...block.children].forEach((row) => {
+    [...row.children].forEach((col) => {
+      while (col.firstElementChild) {
+        wrapper.append(col.firstElementChild);
+      }
+    });
+  });
 
-    if (content) {
-      const section = document.createElement('div');
-      section.className = 'aldevron-about-content';
-      section.innerHTML = content.innerHTML;
-
-      // Style CTA links as buttons
-      section.querySelectorAll('p > strong > a, p > a:only-child').forEach((a) => {
-        a.classList.add('aldevron-about-cta');
-      });
-
-      wrapper.append(section);
+  wrapper.querySelectorAll('a').forEach((link) => {
+    const parent = link.parentElement;
+    if (parent.tagName === 'P' && parent.children.length === 1 && parent.textContent.trim() === link.textContent.trim()) {
+      link.classList.add('cta');
     }
-
-    row.remove();
   });
 
   block.textContent = '';
-  block.append(wrapper);
+
+  const overlay = document.createElement('div');
+  overlay.className = 'aldevron-about-overlay';
+  overlay.append(wrapper);
+  block.append(overlay);
 }
