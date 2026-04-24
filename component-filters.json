@@ -91,6 +91,12 @@
       "aldevron-product-card"
     ]
   },
+    {
+    "id": "aldevron-recent-posts",
+    "components": [
+      "aldevron-post-card"
+    ]
+  },
   {
     "id": "aldevron-recent-posts",
     "components": []
