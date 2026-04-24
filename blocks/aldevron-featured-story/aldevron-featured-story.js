@@ -23,56 +23,67 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  // 1. Get all the data rows from the block
-  const rows = [...block.children];
+  // 1. Collect all potential data parts
+  const allDivs = [...block.querySelectorAll(':scope > div > div')];
+  
+  let titleNode = null;
+  let pictureNode = null;
+  let contentNode = null;
 
-  // 2. Map the data based on your JSON structure
-  // row[0] = Title, row[1] = Image, row[2] = Alt Text, row[3] = Content
-  const titleData = rows[0]?.querySelector('div');
-  const imageData = rows[1]?.querySelector('picture');
-  const textData = rows[3]?.querySelector('div'); // This is your Story Content & Button
+  allDivs.forEach((div) => {
+    // Check if it's the image
+    if (div.querySelector('picture')) {
+      pictureNode = div.querySelector('picture');
+    } 
+    // Check if it's the Rich Text (usually contains P, UL, or multiple lines)
+    else if (div.querySelector('p, ul, ol, a') || div.innerHTML.includes('<br>')) {
+      contentNode = div;
+    }
+    // If it's just plain text and not empty, it's likely the title
+    else if (div.innerText.trim() !== '' && !titleNode) {
+      titleNode = div;
+    }
+  });
 
-  // 3. Clear the block to rebuild the layout
+  // 2. Build the new clean structure
   block.innerHTML = '';
 
-  // 4. ADD TITLE (Top)
-  if (titleData && titleData.innerText.trim() !== '') {
+  // --- Title (Top) ---
+  if (titleNode) {
     const header = document.createElement('div');
     header.className = 'featured-story-header';
     const h2 = document.createElement('h2');
-    h2.innerHTML = titleData.innerHTML;
+    h2.innerHTML = titleNode.innerHTML;
     header.append(h2);
     block.append(header);
   }
 
-  // 5. CREATE BODY (Flex Container)
+  // --- Flex Body Container ---
   const body = document.createElement('div');
   body.className = 'featured-story-body';
 
-  // LEFT COLUMN: Image
-  const imageCol = document.createElement('div');
-  imageCol.className = 'featured-story-image';
-  if (imageData) {
-    const img = imageData.querySelector('img');
-    const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    imageCol.append(optimized);
+  // Left side: Image
+  const imgCol = document.createElement('div');
+  imgCol.className = 'featured-story-image';
+  if (pictureNode) {
+    const img = pictureNode.querySelector('img');
+    const optimized = createOptimizedPicture(img.src, img.alt || 'featured story image', false, [{ width: '750' }]);
+    imgCol.append(optimized);
   }
-  body.append(imageCol);
+  body.append(imgCol);
 
-  // RIGHT COLUMN: All Text and Buttons
+  // Right side: Everything else (Story text & Button)
   const textCol = document.createElement('div');
   textCol.className = 'featured-story-text';
-  if (textData) {
-    // This takes EVERYTHING inside the rich text field (paragraphs, links, etc.)
-    textCol.innerHTML = textData.innerHTML;
+  if (contentNode) {
+    textCol.innerHTML = contentNode.innerHTML;
     
-    // Convert links into buttons
+    // Format any links inside this area as buttons
     textCol.querySelectorAll('a').forEach((link) => {
       link.classList.add('button', 'primary');
     });
   }
   body.append(textCol);
 
-  // 6. Add the Body to the Block
   block.append(body);
 }
