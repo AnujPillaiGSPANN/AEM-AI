@@ -50,29 +50,28 @@ export default function decorate(block) {
   const grid = document.createElement('ul');
   grid.classList.add('aldevron-modalities-grid');
   
-  // This connects the UL to the "items" field in your JSON
-  grid.setAttribute('data-aue-prop', 'items');
+  // Container Instrumentation
   grid.setAttribute('data-aue-type', 'container');
-  grid.setAttribute('data-aue-label', 'Modalities List');
   grid.setAttribute('data-aue-filter', 'aldevron-modality-card');
+  grid.setAttribute('data-aue-label', 'Modalities List');
 
-  rows.forEach((row, index) => {
+  rows.forEach((row) => {
     const card = document.createElement('li');
     card.classList.add('aldevron-modalities-card');
     
-    // Mark this LI as the Modality Card component
+    // Component Instrumentation
     card.setAttribute('data-aue-type', 'component');
     card.setAttribute('data-aue-model', 'aldevron-modality-card');
-    card.setAttribute('data-aue-label', `Modality Card ${index + 1}`);
+    card.setAttribute('data-aue-label', 'Modality Card');
 
     const cells = [...row.children];
 
-    // ICON (Matches "image" in your JSON)
+    // --- ICON COLUMN ---
     const iconDiv = document.createElement('div');
     iconDiv.className = 'aldevron-modalities-icon';
+    // This makes the image clickable/editable
     iconDiv.setAttribute('data-aue-prop', 'image');
     iconDiv.setAttribute('data-aue-type', 'media');
-    iconDiv.setAttribute('data-aue-label', 'Icon');
     
     const img = cells[0]?.querySelector('img');
     if (img) {
@@ -80,12 +79,12 @@ export default function decorate(block) {
     }
     card.append(iconDiv);
 
-    // TEXT (Matches "text" in your JSON)
+    // --- TEXT COLUMN ---
     const textDiv = document.createElement('div');
     textDiv.className = 'aldevron-modalities-text';
+    // This makes the text clickable/editable
     textDiv.setAttribute('data-aue-prop', 'text');
     textDiv.setAttribute('data-aue-type', 'richtext');
-    textDiv.setAttribute('data-aue-label', 'Card Content');
     
     if (cells[1]) {
       textDiv.innerHTML = cells[1].innerHTML;
