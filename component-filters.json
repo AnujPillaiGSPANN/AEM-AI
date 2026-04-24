@@ -1,178 +1,149 @@
 [
-  {
-    "id": "main",
-    "components": [
-      "section"
-    ]
-  },
-  {
-    "id": "section",
-    "components": [
-      "accordion",
-      "button",
-      "cards",
-      "cards-contact",
-      "carousel",
-      "columns",
-      "embed",
-      "fragment",
-      "form",
-      "hero",
-      "image",
-      "quote",
-      "search",
-      "tabs",
-      "table",
-      "text",
-      "title",
-      "hero-banner",
-      "video",
-      "aldevron-about",
-      "aldevron-catalog-intro",
-      "aldevron-contact-us",
-      "aldevron-facilities",
-      "aldevron-featured-story",
-      "aldevron-hero-carousel",
-      "aldevron-modalities",
-      "aldevron-plasmid-preps",
-      "aldevron-product-cards",
-      "aldevron-recent-posts"
-    ]
-  },
-  {
-    "id": "accordion",
-    "components": [
-      "accordion-item"
-    ]
-  },
-  {
-    "id": "aldevron-about",
-    "components": []
-  },
-  {
-    "id": "aldevron-catalog-intro",
-    "components": []
-  },
-  {
-    "id": "aldevron-contact-us",
-    "components": []
-  },
-  {
-    "id": "aldevron-featured-story",
-    "components": []
-  },
-  {
-    "id": "aldevron-facilities",
-    "components": [
-      "aldevron-facility"
-    ]
-  },
-  {
-    "id": "aldevron-hero-carousel",
-    "components": [
-      "aldevron-hero-slide"
-    ]
-  },
-  {
-    "id": "aldevron-modalities",
-    "components": [
-      "aldevron-modality-card"
-    ]
-  },
-  {
-    "id": "aldevron-plasmid-preps",
-    "components": [
-      "aldevron-plasmid-prep-item"
-    ]
-  },
-  {
-    "id": "aldevron-product-cards",
-    "components": [
-      "aldevron-product-card"
-    ]
-  },
+ {
+      "id": "main",
+      "components": [
+        "section"
+      ]
+    },
     {
-    "id": "aldevron-recent-posts",
-    "components": [
-      "aldevron-post-card"
-    ]
-  },
-  {
-    "id": "aldevron-recent-posts",
-    "components": []
-  },
-  {
-    "id": "cards",
-    "components": [
-      "card"
-    ]
-  },
-  {
-    "id": "carousel",
-    "components": [
-      "carousel-item"
-    ]
-  },
-  {
-    "id": "columns-info",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
-    "id": "columns",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
-    "id": "table",
-    "components": [
-      "table-row"
-    ]
-  },
-  {
-    "id": "table-2-columns",
-    "components": [
-      "table-col-2"
-    ]
-  },
-  {
-    "id": "table-3-columns",
-    "components": [
-      "table-col-3"
-    ]
-  },
-  {
-    "id": "table-4-columns",
-    "components": [
-      "table-col-4"
-    ]
-  },
-  {
-    "id": "tabs",
-    "components": [
-      "tabs-item"
-    ]
-  },
+      "id": "section",
+      "components": [
+        "accordion",
+        "button",
+        "cards",
+        "cards-contact",
+        "carousel",
+        "columns",
+        "embed",
+        "fragment",
+        "form",
+        "hero",
+        "image",
+        "quote",
+        "search",
+        "tabs",
+        "table",
+        "text",
+        "title",
+        "hero-banner",
+        "video",
+        "aldevron-about",
+        "aldevron-catalog-intro",
+        "aldevron-contact-us",
+        "aldevron-facilities",
+        "aldevron-featured-story",
+        "aldevron-hero-carousel",
+        "aldevron-modalities",
+        "aldevron-plasmid-preps",
+        "aldevron-product-cards",
+        "aldevron-recent-posts"
+      ]
+    },
+    {
+      "id": "accordion",
+      "components": [
+        "accordion-item"
+      ]
+    },
+    {
+      "id": "aldevron-facilities",
+      "components": [
+        "aldevron-facility"
+      ]
+    },
+    {
+      "id": "aldevron-hero-carousel",
+      "components": [
+        "aldevron-hero-slide"
+      ]
+    },
+    {
+      "id": "aldevron-modalities",
+      "components": [
+        "aldevron-modality-card"
+      ]
+    },
+    {
+      "id": "aldevron-plasmid-preps",
+      "components": [
+        "aldevron-plasmid-prep-item"
+      ]
+    },
+    {
+      "id": "aldevron-product-cards",
+      "components": [
+        "aldevron-product-card"
+      ]
+    },
+    {
+      "id": "aldevron-recent-posts",
+      "components": [
+        "aldevron-post-card"
+      ]
+    },
+    {
+      "id": "cards",
+      "components": [
+        "card"
+      ]
+    },
+    {
+      "id": "carousel",
+      "components": [
+        "carousel-item"
+      ]
+    },
+    {
+      "id": "columns",
+      "components": [
+        "column"
+      ]
+    },
+    {
+      "id": "columns-info",
+      "components": [
+        "column"
+      ]
+    },
+    {
+      "id": "column",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title"
+      ]
+    },
+    {
+      "id": "table",
+      "components": [
+        "table-row"
+      ]
+    },
+    {
+      "id": "table-2-columns",
+      "components": [
+        "table-col-2"
+      ]
+    },
+    {
+      "id": "table-3-columns",
+      "components": [
+        "table-col-3"
+      ]
+    },
+    {
+      "id": "table-4-columns",
+      "components": [
+        "table-col-4"
+      ]
+    },
+    {
+      "id": "tabs",
+      "components": [
+        "tabs-item"
+      ]
+    },
   {
     "id": "video",
     "components": []
