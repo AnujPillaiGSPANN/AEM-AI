@@ -68,30 +68,12 @@
         "name": "titleType",
         "label": "Title Type",
         "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
+          { "name": "h1", "value": "h1" },
+          { "name": "h2", "value": "h2" },
+          { "name": "h3", "value": "h3" },
+          { "name": "h4", "value": "h4" },
+          { "name": "h5", "value": "h5" },
+          { "name": "h6", "value": "h6" }
         ]
       }
     ]
@@ -119,18 +101,9 @@
         "name": "linkType",
         "label": "Type",
         "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          }
+          { "name": "default", "value": "" },
+          { "name": "primary", "value": "primary" },
+          { "name": "secondary", "value": "secondary" }
         ]
       }
     ]
@@ -149,14 +122,8 @@
         "name": "style",
         "label": "Style",
         "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
-          },
-          {
-            "name": "Dark",
-            "value": "dark"
-          }
+          { "name": "Highlight", "value": "highlight" },
+          { "name": "Dark", "value": "dark" }
         ]
       }
     ]
@@ -253,10 +220,28 @@
     "id": "aldevron-featured-story",
     "fields": [
       {
+        "component": "text",
+        "name": "title",
+        "label": "Story Title",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Left Image",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "valueType": "string"
+      },
+      {
         "component": "richtext",
         "name": "text",
-        "value": "",
-        "label": "Content",
+        "label": "Story Content & Button",
         "valueType": "string"
       }
     ]
@@ -371,14 +356,8 @@
         "label": "Category",
         "valueType": "string",
         "options": [
-          {
-            "name": "News",
-            "value": "news"
-          },
-          {
-            "name": "Blog",
-            "value": "blog"
-          }
+          { "name": "News", "value": "news" },
+          { "name": "Blog", "value": "blog" }
         ]
       }
     ]
@@ -772,23 +751,14 @@
           {
             "name": "Border",
             "children": [
-              {
-                "name": "Striped",
-                "value": "striped"
-              },
-              {
-                "name": "Bordered",
-                "value": "bordered"
-              }
+              { "name": "Striped", "value": "striped" },
+              { "name": "Bordered", "value": "bordered" }
             ]
           },
           {
             "name": "Header",
             "children": [
-              {
-                "name": "No Header",
-                "value": "no-header"
-              }
+              { "name": "No Header", "value": "no-header" }
             ]
           }
         ]
@@ -800,26 +770,11 @@
         "valueType": "string",
         "value": "table",
         "options": [
-          {
-            "name": "1 Column",
-            "value": "table"
-          },
-          {
-            "name": "2 Columns",
-            "value": "table-2-columns"
-          },
-          {
-            "name": "3 Columns",
-            "value": "table-3-columns"
-          },
-          {
-            "name": "4 Columns",
-            "value": "table-4-columns"
-          },
-          {
-            "name": "5 Columns",
-            "value": "table-5-columns"
-          }
+          { "name": "1 Column", "value": "table" },
+          { "name": "2 Columns", "value": "table-2-columns" },
+          { "name": "3 Columns", "value": "table-3-columns" },
+          { "name": "4 Columns", "value": "table-4-columns" },
+          { "name": "5 Columns", "value": "table-5-columns" }
         ]
       }
     ]
@@ -928,22 +883,10 @@
         "value": "",
         "label": "Heading Type",
         "options": [
-          {
-            "name": "H3",
-            "value": "h3"
-          },
-          {
-            "name": "H4",
-            "value": "h4"
-          },
-          {
-            "name": "H5",
-            "value": "h5"
-          },
-          {
-            "name": "H6",
-            "value": "h6"
-          }
+          { "name": "H3", "value": "h3" },
+          { "name": "H4", "value": "h4" },
+          { "name": "H5", "value": "h5" },
+          { "name": "H6", "value": "h6" }
         ]
       },
       {
