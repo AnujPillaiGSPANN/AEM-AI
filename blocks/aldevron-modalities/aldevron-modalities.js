@@ -44,59 +44,57 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  // 1. Identify the rows. 
-  // If the block was already decorated, we look for the grid we created.
-  const isAlreadyDecorated = block.querySelector('.aldevron-modalities-grid');
-  const rows = isAlreadyDecorated 
-    ? [...block.querySelectorAll('.aldevron-modalities-card')] 
-    : [...block.children];
+  const rows = [...block.children];
+  block.innerHTML = '';
 
-  // 2. Create/Get the Grid Container
-  let grid = block.querySelector('.aldevron-modalities-grid');
-  if (!grid) {
-    grid = document.createElement('ul');
-    grid.classList.add('aldevron-modalities-grid');
-    grid.setAttribute('data-aue-type', 'container');
-    grid.setAttribute('data-aue-filter', 'aldevron-modalities');
-    grid.setAttribute('data-aue-label', 'Modalities Grid');
-  }
+  const grid = document.createElement('ul');
+  grid.classList.add('aldevron-modalities-grid');
+  
+  // 1. This tells the Content Tree: "I am a folder for cards"
+  grid.setAttribute('data-aue-type', 'container');
+  grid.setAttribute('data-aue-filter', 'aldevron-modality-card'); // Must match the child model name
+  grid.setAttribute('data-aue-prop', 'items'); // This is often the missing link for the tree
+  grid.setAttribute('data-aue-label', 'Modalities List');
 
-  // 3. Process Rows
-  rows.forEach((row) => {
-    // If it's already a card, don't re-decorate it, just ensure instrumentation
-    if (row.classList.contains('aldevron-modalities-card')) return;
-
+  rows.forEach((row, index) => {
     const card = document.createElement('li');
     card.classList.add('aldevron-modalities-card');
+    
+    // 2. This tells the Content Tree: "I am an individual item"
     card.setAttribute('data-aue-type', 'component');
     card.setAttribute('data-aue-model', 'aldevron-modality-card');
-    card.setAttribute('data-aue-label', 'Modality Card');
+    card.setAttribute('data-aue-label', `Modality Card ${index + 1}`);
+    
+    // This attribute helps the tree track the specific index
+    card.setAttribute('data-aue-resource', `customer-resource-${index}`); 
 
     const cells = [...row.children];
-    const imageCell = cells[0];
-    const textCell = cells[1];
-
-    // --- Icon ---
+    
+    // ICON
     const iconDiv = document.createElement('div');
     iconDiv.className = 'aldevron-modalities-icon';
-    const img = imageCell?.querySelector('img');
+    iconDiv.setAttribute('data-aue-prop', 'image'); // Matches JSON field name
+    iconDiv.setAttribute('data-aue-type', 'media');
+    
+    const img = cells[0]?.querySelector('img');
     if (img) {
       iconDiv.append(createOptimizedPicture(img.src, img.alt || 'icon', false, [{ width: '200' }]));
     }
     card.append(iconDiv);
 
-    // --- Text ---
+    // TEXT
     const textDiv = document.createElement('div');
     textDiv.className = 'aldevron-modalities-text';
-    textDiv.innerHTML = textCell?.innerHTML || '<h3>New Modality</h3><p>Edit content...</p>';
+    textDiv.setAttribute('data-aue-prop', 'text'); // Matches JSON field name
+    textDiv.setAttribute('data-aue-type', 'richtext');
+    
+    if (cells[1]) {
+      textDiv.innerHTML = cells[1].innerHTML;
+    }
     card.append(textDiv);
     
     grid.append(card);
   });
 
-  // 4. Final step: Only clear and append if we actually have new content
-  if (!isAlreadyDecorated) {
-    block.innerHTML = '';
-    block.append(grid);
-  }
+  block.append(grid);
 }
