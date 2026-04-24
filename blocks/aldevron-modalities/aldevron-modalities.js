@@ -50,31 +50,29 @@ export default function decorate(block) {
   const grid = document.createElement('ul');
   grid.classList.add('aldevron-modalities-grid');
   
-  // 1. This tells the Content Tree: "I am a folder for cards"
+  // This connects the UL to the "items" field in your JSON
+  grid.setAttribute('data-aue-prop', 'items');
   grid.setAttribute('data-aue-type', 'container');
-  grid.setAttribute('data-aue-filter', 'aldevron-modality-card'); // Must match the child model name
-  grid.setAttribute('data-aue-prop', 'items'); // This is often the missing link for the tree
   grid.setAttribute('data-aue-label', 'Modalities List');
+  grid.setAttribute('data-aue-filter', 'aldevron-modality-card');
 
   rows.forEach((row, index) => {
     const card = document.createElement('li');
     card.classList.add('aldevron-modalities-card');
     
-    // 2. This tells the Content Tree: "I am an individual item"
+    // Mark this LI as the Modality Card component
     card.setAttribute('data-aue-type', 'component');
     card.setAttribute('data-aue-model', 'aldevron-modality-card');
     card.setAttribute('data-aue-label', `Modality Card ${index + 1}`);
-    
-    // This attribute helps the tree track the specific index
-    card.setAttribute('data-aue-resource', `customer-resource-${index}`); 
 
     const cells = [...row.children];
-    
-    // ICON
+
+    // ICON (Matches "image" in your JSON)
     const iconDiv = document.createElement('div');
     iconDiv.className = 'aldevron-modalities-icon';
-    iconDiv.setAttribute('data-aue-prop', 'image'); // Matches JSON field name
+    iconDiv.setAttribute('data-aue-prop', 'image');
     iconDiv.setAttribute('data-aue-type', 'media');
+    iconDiv.setAttribute('data-aue-label', 'Icon');
     
     const img = cells[0]?.querySelector('img');
     if (img) {
@@ -82,11 +80,12 @@ export default function decorate(block) {
     }
     card.append(iconDiv);
 
-    // TEXT
+    // TEXT (Matches "text" in your JSON)
     const textDiv = document.createElement('div');
     textDiv.className = 'aldevron-modalities-text';
-    textDiv.setAttribute('data-aue-prop', 'text'); // Matches JSON field name
+    textDiv.setAttribute('data-aue-prop', 'text');
     textDiv.setAttribute('data-aue-type', 'richtext');
+    textDiv.setAttribute('data-aue-label', 'Card Content');
     
     if (cells[1]) {
       textDiv.innerHTML = cells[1].innerHTML;
