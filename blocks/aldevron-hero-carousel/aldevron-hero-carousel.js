@@ -26,21 +26,39 @@ export default function decorate(block) {
   const slidesContainer = document.createElement('div');
   slidesContainer.classList.add('aldevron-hero-carousel-slides');
 
+  // rows.forEach((row, idx) => {
+  //   const slide = document.createElement('div');
+  //   slide.classList.add('aldevron-hero-carousel-slide');
+  //   slide.setAttribute('aria-hidden', idx !== 0);
+  //   while (row.firstElementChild) {
+  //     const cell = row.firstElementChild;
+  //     if (cell.querySelector('picture')) {
+  //       cell.classList.add('aldevron-hero-carousel-image');
+  //     } else {
+  //       cell.classList.add('aldevron-hero-carousel-content');
+  //     }
+  //     slide.append(cell);
+  //   }
+  //   slidesContainer.append(slide);
+  //   row.remove();
+  // });
+
   rows.forEach((row, idx) => {
-    const slide = document.createElement('div');
-    slide.classList.add('aldevron-hero-carousel-slide');
-    slide.setAttribute('aria-hidden', idx !== 0);
-    while (row.firstElementChild) {
-      const cell = row.firstElementChild;
+    // 1. Give the existing row the slide class (don't create a new 'slide' div)
+    row.classList.add('aldevron-hero-carousel-slide');
+    row.setAttribute('aria-hidden', idx !== 0);
+    
+    // 2. Classify the children that are already inside the row
+    [...row.children].forEach((cell) => {
       if (cell.querySelector('picture')) {
         cell.classList.add('aldevron-hero-carousel-image');
       } else {
         cell.classList.add('aldevron-hero-carousel-content');
       }
-      slide.append(cell);
-    }
-    slidesContainer.append(slide);
-    row.remove();
+    });
+
+    // 3. Move the row into your new container
+    slidesContainer.append(row);
   });
 
   block.append(slidesContainer);
