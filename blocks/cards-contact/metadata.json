@@ -1,0 +1,13 @@
+{
+  "variantOf": "cards",
+  "name": "cards-contact",
+  "description": "Contact category cards with icon, heading, and description in a 2x2 grid. Used on the contact us page for linking to Product Information, Service & Repair, Application Support, and Careers.",
+  "visualCharacteristics": {
+    "layout": "2x2 grid",
+    "cardStyle": "white background, rounded, shadow, centered text",
+    "iconStyle": "circular border with primary color, SVG icon",
+    "sectionBackground": "dark (gray-900)"
+  },
+  "sourceUrl": "https://www.leica-microsystems.com/contact/contact-us-online/",
+  "createdAt": "2026-03-31"
+}

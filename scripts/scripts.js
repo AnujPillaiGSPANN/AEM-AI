@@ -112,12 +112,27 @@ export function decorateMain(main) {
 }
 
 /**
+ * Loads template-specific CSS based on page metadata.
+ */
+async function loadTemplate() {
+  const template = getMetadata('template');
+  if (template) {
+    try {
+      await loadCSS(`${window.hlx.codeBasePath}/styles/${template}.css`);
+    } catch (e) {
+      // no template-specific CSS found
+    }
+  }
+}
+
+/**
  * Loads everything needed to get to LCP.
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  await loadTemplate();
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
     doc.body.dataset.breadcrumbs = true;
   }
