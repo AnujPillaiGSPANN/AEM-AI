@@ -1,0 +1,40 @@
+.aldevron-catalog-intro {
+  background-color: var(--light-color);
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.aldevron-catalog-intro .aldevron-catalog-intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aldevron-catalog-intro h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  margin-bottom: 16px;
+  color: var(--dark-color);
+}
+
+.aldevron-catalog-intro p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.aldevron-catalog-intro a.cta {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: var(--link-color);
+  color: var(--background-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.aldevron-catalog-intro a.cta:hover {
+  background-color: var(--link-hover-color);
+}

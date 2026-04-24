@@ -1,0 +1,25 @@
+{
+  "status": "success",
+  "url": "https://www.leica-microsystems.com/applications/education/",
+  "path": "applications/education",
+  "timestamp": "2026-04-03T11:54:07.390Z",
+  "title": "Educational Microscopes | Applications | Leica Microsystems",
+  "template": "education-page",
+  "blocks": [
+    "hero-banner",
+    "cards-carousel",
+    "cards-carousel",
+    "cards-carousel",
+    "cards-carousel",
+    "table",
+    "video",
+    "columns",
+    "quote",
+    "quote",
+    "quote",
+    "feature-list",
+    "gallery",
+    "cta-banner",
+    "promo-banner"
+  ]
+}

@@ -36,9 +36,33 @@
     ]
   },
   {
-    "id": "cards-contact",
+    "id": "aldevron-facilities",
     "components": [
-      "card-contact"
+      "aldevron-facility"
+    ]
+  },
+  {
+    "id": "aldevron-hero-carousel",
+    "components": [
+      "aldevron-hero-slide"
+    ]
+  },
+  {
+    "id": "aldevron-modalities",
+    "components": [
+      "aldevron-modality-card"
+    ]
+  },
+  {
+    "id": "aldevron-plasmid-preps",
+    "components": [
+      "aldevron-plasmid-prep-item"
+    ]
+  },
+  {
+    "id": "aldevron-product-cards",
+    "components": [
+      "aldevron-product-card"
     ]
   },
   {

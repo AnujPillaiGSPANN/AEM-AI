@@ -1,0 +1,74 @@
+.aldevron-modalities-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 32px;
+}
+
+.aldevron-modalities-header h2 {
+  font-size: var(--heading-font-size-xl);
+  margin: 0 0 16px;
+}
+
+.aldevron-modalities-header p {
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+.aldevron-modalities-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.aldevron-modalities-card {
+  background-color: var(--light-color);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.aldevron-modalities-card:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+}
+
+.aldevron-modalities-icon {
+  margin-bottom: 16px;
+}
+
+.aldevron-modalities-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.aldevron-modalities-text strong {
+  display: block;
+  font-size: var(--body-font-size-m);
+  margin-bottom: 8px;
+}
+
+.aldevron-modalities-text p {
+  margin: 0 0 8px;
+  font-size: var(--body-font-size-s);
+  color: var(--dark-color);
+}
+
+.aldevron-modalities-text a {
+  font-weight: 600;
+}
+
+@media (width >= 600px) {
+  .aldevron-modalities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .aldevron-modalities-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

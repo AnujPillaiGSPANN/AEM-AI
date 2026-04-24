@@ -1,0 +1,46 @@
+.aldevron-featured-story-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.aldevron-featured-story-content h1 {
+  font-size: var(--heading-font-size-xxl);
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 24px;
+}
+
+.aldevron-featured-story-content p {
+  margin: 0 0 12px;
+  line-height: 1.7;
+}
+
+.aldevron-featured-story-content em {
+  font-style: italic;
+  display: block;
+  margin: 4px 0;
+}
+
+.aldevron-featured-story-cta {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 0.6em 1.5em;
+  background-color: var(--link-color);
+  color: var(--background-color);
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.aldevron-featured-story-cta:hover {
+  background-color: var(--link-hover-color);
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  .aldevron-featured-story-content {
+    padding: 64px 32px;
+  }
+}

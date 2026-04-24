@@ -1,0 +1,53 @@
+.aldevron-contact-us {
+  background-color: var(--dark-color);
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.aldevron-contact-us .aldevron-contact-us-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aldevron-contact-us h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  color: var(--background-color);
+  margin-bottom: 16px;
+}
+
+.aldevron-contact-us p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  color: var(--background-color);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.aldevron-contact-us a.phone-link {
+  color: var(--background-color);
+  text-decoration: underline;
+  font-size: var(--body-font-size-m);
+  font-weight: 600;
+}
+
+.aldevron-contact-us a.phone-link:hover {
+  color: var(--light-color);
+}
+
+.aldevron-contact-us a.cta {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: var(--background-color);
+  color: var(--dark-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.aldevron-contact-us a.cta:hover {
+  background-color: transparent;
+  color: var(--background-color);
+  outline: 2px solid var(--background-color);
+}

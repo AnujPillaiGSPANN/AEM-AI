@@ -1,0 +1,66 @@
+.aldevron-recent-posts {
+  padding: 48px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.aldevron-recent-posts .aldevron-recent-posts-heading h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  margin-bottom: 24px;
+  color: var(--dark-color);
+}
+
+.aldevron-recent-posts .aldevron-recent-posts-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.aldevron-recent-posts .aldevron-recent-posts-card {
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.aldevron-recent-posts .aldevron-recent-posts-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.aldevron-recent-posts .aldevron-recent-posts-card h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  margin: 16px;
+  color: var(--dark-color);
+}
+
+.aldevron-recent-posts .aldevron-recent-posts-card h3 a {
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+.aldevron-recent-posts .aldevron-recent-posts-card h3 a:hover {
+  color: var(--link-hover-color);
+}
+
+.aldevron-recent-posts .aldevron-recent-posts-card p {
+  font-size: var(--body-font-size-s);
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 0 16px 16px;
+}
+
+@media (width >= 900px) {
+  .aldevron-recent-posts {
+    flex-direction: row;
+  }
+
+  .aldevron-recent-posts .aldevron-recent-posts-column {
+    flex: 1;
+  }
+}

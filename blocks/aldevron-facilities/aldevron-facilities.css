@@ -1,0 +1,96 @@
+.aldevron-facilities {
+  background-color: var(--light-color);
+  padding: 48px 16px;
+}
+
+.aldevron-facilities .aldevron-facilities-intro {
+  margin-bottom: 40px;
+}
+
+.aldevron-facilities .aldevron-facilities-intro h2 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  margin-bottom: 16px;
+  color: var(--dark-color);
+}
+
+.aldevron-facilities .aldevron-facilities-intro h3 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: var(--dark-color);
+}
+
+.aldevron-facilities .aldevron-facilities-intro p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.aldevron-facilities .aldevron-facilities-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.aldevron-facilities .aldevron-facilities-card {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+}
+
+.aldevron-facilities .aldevron-facilities-card-image {
+  line-height: 0;
+}
+
+.aldevron-facilities .aldevron-facilities-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.aldevron-facilities .aldevron-facilities-card-body {
+  padding: 20px;
+}
+
+.aldevron-facilities .aldevron-facilities-card-body strong {
+  display: block;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  color: var(--dark-color);
+  margin-bottom: 4px;
+}
+
+.aldevron-facilities .aldevron-facilities-card-body p {
+  font-size: var(--body-font-size-s);
+  color: var(--text-color);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.aldevron-facilities a.learn-more {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--body-font-size-s);
+}
+
+.aldevron-facilities a.learn-more:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .aldevron-facilities .aldevron-facilities-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .aldevron-facilities .aldevron-facilities-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -2,49 +2,51 @@
 /* global WebImporter */
 
 /**
- * Transformer: Leica Microsystems section breaks and section metadata.
- * Runs in afterTransform only. Uses payload.template.sections from page-templates.json.
- * Selectors from captured DOM of https://www.leica-microsystems.com/contact/contact-us-online/
+ * Transformer: Leica Microsystems section breaks and section-metadata.
+ * Runs in afterTransform only. Uses payload.template.sections.
+ * Section selectors use TYPO3 element IDs from captured DOM.
  */
 const TransformHook = { beforeTransform: 'beforeTransform', afterTransform: 'afterTransform' };
 
 export default function transform(hookName, element, payload) {
   if (hookName === TransformHook.afterTransform) {
-    const { document } = element.ownerDocument ? { document: element.ownerDocument } : { document: element };
-    const doc = document || element.ownerDocument;
     const template = payload && payload.template;
     if (!template || !template.sections || template.sections.length < 2) return;
 
-    // Process sections in reverse order to avoid offset issues
-    const sections = [...template.sections].reverse();
+    const sections = template.sections;
+    const document = element.ownerDocument;
 
-    sections.forEach((section, reverseIndex) => {
-      const isFirst = reverseIndex === sections.length - 1; // First section in original order
-      const selectorList = Array.isArray(section.selector) ? section.selector : [section.selector];
-
+    // Process sections in reverse order to avoid position shifts
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const section = sections[i];
       let sectionEl = null;
-      for (const sel of selectorList) {
-        sectionEl = element.querySelector(sel);
+
+      const selectors = Array.isArray(section.selector) ? section.selector : [section.selector];
+      for (const sel of selectors) {
+        try {
+          sectionEl = element.querySelector(sel);
+        } catch (e) {
+          // skip invalid selectors
+        }
         if (sectionEl) break;
       }
 
-      if (!sectionEl) return;
+      if (!sectionEl) continue;
 
       // Add section-metadata block if section has a style
       if (section.style) {
-        const cells = { style: section.style };
-        const metadataBlock = WebImporter.Blocks.createBlock(doc, {
+        const metaBlock = WebImporter.Blocks.createBlock(document, {
           name: 'Section Metadata',
-          cells,
+          cells: { style: section.style },
         });
-        sectionEl.after(metadataBlock);
+        sectionEl.after(metaBlock);
       }
 
-      // Add section break (hr) before each section except the first
-      if (!isFirst) {
-        const hr = doc.createElement('hr');
+      // Add section break (hr) before section if not the first section
+      if (i > 0 && sectionEl.previousElementSibling) {
+        const hr = document.createElement('hr');
         sectionEl.before(hr);
       }
-    });
+    }
   }
 }
