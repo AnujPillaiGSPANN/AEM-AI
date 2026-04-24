@@ -183,6 +183,20 @@
   {
     "id": "aldevron-about",
     "fields": [
+       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "value": ""
+      },
       {
         "component": "richtext",
         "name": "text",
@@ -324,14 +338,48 @@
     ]
   },
   {
-    "id": "aldevron-recent-posts",
+    "id": "aldevron-post-card",
     "fields": [
       {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Content",
-        "valueType": "string"
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Thumbnail Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Article Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "link",
+        "label": "Article Link"
+      },
+      {
+        "component": "select",
+        "name": "category",
+        "label": "Category",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "News",
+            "value": "news"
+          },
+          {
+            "name": "Blog",
+            "value": "blog"
+          }
+        ]
       }
     ]
   },
