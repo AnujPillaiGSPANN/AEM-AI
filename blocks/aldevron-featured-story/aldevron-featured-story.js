@@ -23,53 +23,56 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  // 1. Capture the raw data before we clear the block
-  const rawRows = [...block.querySelectorAll(':scope > div > div')];
-  
-  // Identify data by content type rather than index
-  const titleText = rawRows.find(row => row.innerText && !row.querySelector('picture') && row.innerText.length < 150)?.innerText;
-  const pictureElement = block.querySelector('picture');
-  const richTextElement = rawRows.find(row => row.querySelector('p, ul, ol') && !row.querySelector('picture'));
+  // 1. Get all the data rows from the block
+  const rows = [...block.children];
 
-  // 2. Clear the block for a clean rebuild
+  // 2. Map the data based on your JSON structure
+  // row[0] = Title, row[1] = Image, row[2] = Alt Text, row[3] = Content
+  const titleData = rows[0]?.querySelector('div');
+  const imageData = rows[1]?.querySelector('picture');
+  const textData = rows[3]?.querySelector('div'); // This is your Story Content & Button
+
+  // 3. Clear the block to rebuild the layout
   block.innerHTML = '';
 
-  // 3. Add the Title at the top
-  if (titleText) {
-    const titleWrapper = document.createElement('div');
-    titleWrapper.className = 'featured-story-header';
+  // 4. ADD TITLE (Top)
+  if (titleData && titleData.innerText.trim() !== '') {
+    const header = document.createElement('div');
+    header.className = 'featured-story-header';
     const h2 = document.createElement('h2');
-    h2.textContent = titleText;
-    titleWrapper.append(h2);
-    block.append(titleWrapper);
+    h2.innerHTML = titleData.innerHTML;
+    header.append(h2);
+    block.append(header);
   }
 
-  // 4. Create the Flex Container for Image/Text
-  const contentBody = document.createElement('div');
-  contentBody.className = 'featured-story-body';
+  // 5. CREATE BODY (Flex Container)
+  const body = document.createElement('div');
+  body.className = 'featured-story-body';
 
-  // Left Column: Image
+  // LEFT COLUMN: Image
   const imageCol = document.createElement('div');
   imageCol.className = 'featured-story-image';
-  if (pictureElement) {
-    const img = pictureElement.querySelector('img');
+  if (imageData) {
+    const img = imageData.querySelector('img');
     const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
     imageCol.append(optimized);
   }
+  body.append(imageCol);
 
-  // Right Column: Text and Button
+  // RIGHT COLUMN: All Text and Buttons
   const textCol = document.createElement('div');
   textCol.className = 'featured-story-text';
-  if (richTextElement) {
-    textCol.innerHTML = richTextElement.innerHTML;
+  if (textData) {
+    // This takes EVERYTHING inside the rich text field (paragraphs, links, etc.)
+    textCol.innerHTML = textData.innerHTML;
     
-    // Style links as buttons automatically
+    // Convert links into buttons
     textCol.querySelectorAll('a').forEach((link) => {
       link.classList.add('button', 'primary');
     });
   }
+  body.append(textCol);
 
-  // Assemble
-  contentBody.append(imageCol, textCol);
-  block.append(contentBody);
+  // 6. Add the Body to the Block
+  block.append(body);
 }
