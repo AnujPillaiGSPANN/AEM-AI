@@ -54,18 +54,6 @@
 
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
-function decorateCard(row) {
-  // We treat the 'row' itself as the card
-  row.className = 'aldevron-recent-posts-card';
-
-  row.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '400' }]);
-    img.closest('picture').replaceWith(optimizedPic);
-  });
-  
-  // No need to return anything, we are modifying the row in place
-}
-
 export default function decorate(block) {
   const rows = [...block.children];
   const columns = [];
@@ -73,43 +61,39 @@ export default function decorate(block) {
 
   rows.forEach((row, index) => {
     if (index % 2 === 0) {
-      // This is a Heading Row
+      // 1. HEADING ROW
       currentColumn = document.createElement('div');
       currentColumn.className = 'aldevron-recent-posts-column';
       
       row.className = 'aldevron-recent-posts-heading';
-      currentColumn.append(row); // Move the row into the column
+      currentColumn.append(row); 
       columns.push(currentColumn);
     } else if (currentColumn) {
-      // This is a Cards Row
-      const cardsWrapper = document.createElement('div');
-      cardsWrapper.className = 'aldevron-recent-posts-cards';
+      // 2. CARDS ROW (The Container)
+      // This 'row' is likely what holds the 'data-aue-prop="items"' 
+      // or similar from the Universal Editor.
       
-      // The cells in this row are your individual "Post Cards"
-      // In Edge Delivery, the Universal Editor maps child components to the 'div' inside a row
+      row.className = 'aldevron-recent-posts-cards';
+      
+      // Ensure this row is flagged as the container for the editor
+      row.setAttribute('data-aue-type', 'container');
+      row.setAttribute('data-aue-filter', 'aldevron-recent-posts');
+
       [...row.children].forEach((cell) => {
-        // We style the cell as the card
         cell.className = 'aldevron-recent-posts-card';
-        
-        // Optimize images inside the cell
+        // Flag individual cards so the editor knows they are components
+        cell.setAttribute('data-aue-type', 'component');
+        cell.setAttribute('data-aue-label', 'Post Card');
+
         cell.querySelectorAll('picture > img').forEach((img) => {
           const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '400' }]);
           img.closest('picture').replaceWith(optimizedPic);
         });
-        
-        cardsWrapper.append(cell);
       });
 
-      // We still need to keep the 'row' element alive if it has instrumentation
-      // But since the cards are usually the cells, we append the wrapper to the column
-      currentColumn.append(cardsWrapper);
-      
-      // Optional: Hide the now-empty row if it's causing layout issues, 
-      // but don't .remove() it if the Editor is attached to it.
-      row.style.display = 'none'; 
+      currentColumn.append(row); // Append the original row, don't hide it!
     }
   });
 
-  // Use replaceChildren to swap out the old content for your new columns
   block.replaceChildren(...columns);
 }
