@@ -35,7 +35,8 @@
       "aldevron-hero-carousel",
       "aldevron-modalities",
       "aldevron-plasmid-preps",
-      "aldevron-product-cards"
+      "aldevron-product-cards",
+      "aldevron-recent-posts"
     ]
   },
   {
@@ -43,6 +44,22 @@
     "components": [
       "accordion-item"
     ]
+  },
+  {
+    "id": "aldevron-about",
+    "components": []
+  },
+  {
+    "id": "aldevron-catalog-intro",
+    "components": []
+  },
+  {
+    "id": "aldevron-contact-us",
+    "components": []
+  },
+  {
+    "id": "aldevron-featured-story",
+    "components": []
   },
   {
     "id": "aldevron-facilities",
@@ -73,6 +90,10 @@
     "components": [
       "aldevron-product-card"
     ]
+  },
+  {
+    "id": "aldevron-recent-posts",
+    "components": []
   },
   {
     "id": "cards",
