@@ -64,6 +64,12 @@
     ]
   },
   {
+    "id": "aldevron-recent-posts",
+    "components": [
+      "aldevron-post-card"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
