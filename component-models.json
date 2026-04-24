@@ -266,6 +266,18 @@
     ]
   },
   {
+  "id": "aldevron-modalities",
+  "fields": [
+    {
+      "name": "items",
+      "label": "Modalities List",
+      "component": "multiselect",
+      "valueType": "string",
+      "component-filter": "aldevron-modality-card"
+    }
+  ]
+},
+  {
     "id": "aldevron-modality-card",
     "fields": [
       {
