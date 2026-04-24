@@ -44,60 +44,59 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  const rows = [...block.children];
-  
-  // 1. Create the grid container first
-  const grid = document.createElement('ul');
-  grid.classList.add('aldevron-modalities-grid');
-  
-  // Instrumentation for Universal Editor
-  grid.setAttribute('data-aue-type', 'container');
-  grid.setAttribute('data-aue-filter', 'aldevron-modalities');
-  grid.setAttribute('data-aue-label', 'Modalities Grid');
+  // 1. Identify the rows. 
+  // If the block was already decorated, we look for the grid we created.
+  const isAlreadyDecorated = block.querySelector('.aldevron-modalities-grid');
+  const rows = isAlreadyDecorated 
+    ? [...block.querySelectorAll('.aldevron-modalities-card')] 
+    : [...block.children];
 
+  // 2. Create/Get the Grid Container
+  let grid = block.querySelector('.aldevron-modalities-grid');
+  if (!grid) {
+    grid = document.createElement('ul');
+    grid.classList.add('aldevron-modalities-grid');
+    grid.setAttribute('data-aue-type', 'container');
+    grid.setAttribute('data-aue-filter', 'aldevron-modalities');
+    grid.setAttribute('data-aue-label', 'Modalities Grid');
+  }
+
+  // 3. Process Rows
   rows.forEach((row) => {
+    // If it's already a card, don't re-decorate it, just ensure instrumentation
+    if (row.classList.contains('aldevron-modalities-card')) return;
+
     const card = document.createElement('li');
     card.classList.add('aldevron-modalities-card');
-    
-    // Instrumentation for the individual component
     card.setAttribute('data-aue-type', 'component');
     card.setAttribute('data-aue-model', 'aldevron-modality-card');
     card.setAttribute('data-aue-label', 'Modality Card');
 
-    // 2. Identify data safely
     const cells = [...row.children];
-    // Cell 0 is usually the image, Cell 1 is the text
     const imageCell = cells[0];
     const textCell = cells[1];
 
-    // --- Icon Column ---
+    // --- Icon ---
     const iconDiv = document.createElement('div');
     iconDiv.className = 'aldevron-modalities-icon';
-    
     const img = imageCell?.querySelector('img');
     if (img) {
       iconDiv.append(createOptimizedPicture(img.src, img.alt || 'icon', false, [{ width: '200' }]));
-    } else {
-      // Show a placeholder so the card isn't invisible while empty
-      iconDiv.innerHTML = '<div style="width:50px; height:50px; border:1px dashed #ccc;"></div>';
     }
     card.append(iconDiv);
 
-    // --- Text Column ---
+    // --- Text ---
     const textDiv = document.createElement('div');
     textDiv.className = 'aldevron-modalities-text';
-    
-    // If textCell exists, use it; otherwise, use a placeholder
-    if (textCell && textCell.innerHTML.trim() !== '') {
-      textDiv.innerHTML = textCell.innerHTML;
-    } else {
-      textDiv.innerHTML = '<h3>New Modality</h3><p>Click to edit content</p>';
-    }
+    textDiv.innerHTML = textCell?.innerHTML || '<h3>New Modality</h3><p>Edit content...</p>';
     card.append(textDiv);
     
     grid.append(card);
   });
 
-  // 3. Clear and replace ONLY at the very end
-  block.replaceChildren(grid);
+  // 4. Final step: Only clear and append if we actually have new content
+  if (!isAlreadyDecorated) {
+    block.innerHTML = '';
+    block.append(grid);
+  }
 }
