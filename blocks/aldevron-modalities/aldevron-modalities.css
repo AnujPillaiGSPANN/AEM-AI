@@ -1,4 +1,4 @@
-.aldevron-modalities-header {
+/* .aldevron-modalities-header {
   text-align: center;
   max-width: 800px;
   margin: 0 auto 32px;
@@ -70,5 +70,66 @@
 @media (width >= 900px) {
   .aldevron-modalities-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+} */
+
+/* The main block container */
+.aldevron-modalities-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Forces vertical column */
+  gap: 40px; /* Space between cards */
+}
+
+/* The individual card */
+.aldevron-modalities-card {
+  display: flex;
+  flex-direction: row; /* Icon left, Text right */
+  align-items: flex-start;
+  background: transparent !important; /* Removes gray background */
+  border: none !important; /* Removes any default borders */
+  padding: 0 !important;
+}
+
+/* Icon styling */
+.aldevron-modalities-icon {
+  flex: 0 0 80px; /* Fixed width for icon */
+  margin-right: 25px;
+}
+
+.aldevron-modalities-icon img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text styling */
+.aldevron-modalities-text {
+  flex: 1;
+}
+
+.aldevron-modalities-text h3, 
+.aldevron-modalities-text h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.aldevron-modalities-text p {
+  margin-bottom: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Mobile: Stack them */
+@media (max-width: 600px) {
+  .aldevron-modalities-card {
+    flex-direction: column;
+    text-align: left;
+  }
+  .aldevron-modalities-icon {
+    margin-bottom: 15px;
   }
 }
