@@ -23,48 +23,53 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  // 1. Extract data from the block (these names must match your JSON 'name' fields)
-  // The UE usually renders these as divs within the block
-  const titleContent = block.querySelector(':scope > div > div:nth-child(1)')?.innerText;
-  const imageElement = block.querySelector('picture');
-  const bodyContent = block.querySelector(':scope > div > div:nth-child(4)'); // The rich text area
+  // 1. Capture the raw data before we clear the block
+  const rawRows = [...block.querySelectorAll(':scope > div > div')];
+  
+  // Identify data by content type rather than index
+  const titleText = rawRows.find(row => row.innerText && !row.querySelector('picture') && row.innerText.length < 150)?.innerText;
+  const pictureElement = block.querySelector('picture');
+  const richTextElement = rawRows.find(row => row.querySelector('p, ul, ol') && !row.querySelector('picture'));
 
-  // 2. Clear the block to rebuild it cleanly
+  // 2. Clear the block for a clean rebuild
   block.innerHTML = '';
 
-  // 3. Create the Title Header
-  if (titleContent) {
-    const header = document.createElement('div');
-    header.className = 'featured-story-header';
+  // 3. Add the Title at the top
+  if (titleText) {
+    const titleWrapper = document.createElement('div');
+    titleWrapper.className = 'featured-story-header';
     const h2 = document.createElement('h2');
-    h2.textContent = titleContent;
-    header.append(h2);
-    block.append(header);
+    h2.textContent = titleText;
+    titleWrapper.append(h2);
+    block.append(titleWrapper);
   }
 
-  // 4. Create the Side-by-Side Body
-  const body = document.createElement('div');
-  body.className = 'featured-story-body';
+  // 4. Create the Flex Container for Image/Text
+  const contentBody = document.createElement('div');
+  contentBody.className = 'featured-story-body';
 
-  // Left side: Image
-  const imgCol = document.createElement('div');
-  imgCol.className = 'featured-story-image';
-  if (imageElement) {
-    imgCol.append(imageElement);
+  // Left Column: Image
+  const imageCol = document.createElement('div');
+  imageCol.className = 'featured-story-image';
+  if (pictureElement) {
+    const img = pictureElement.querySelector('img');
+    const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+    imageCol.append(optimized);
   }
 
-  // Right side: Text and Button
+  // Right Column: Text and Button
   const textCol = document.createElement('div');
   textCol.className = 'featured-story-text';
-  if (bodyContent) {
-    textCol.innerHTML = bodyContent.innerHTML;
+  if (richTextElement) {
+    textCol.innerHTML = richTextElement.innerHTML;
     
-    // Style any links as buttons
+    // Style links as buttons automatically
     textCol.querySelectorAll('a').forEach((link) => {
       link.classList.add('button', 'primary');
     });
   }
 
-  body.append(imgCol, textCol);
-  block.append(body);
+  // Assemble
+  contentBody.append(imageCol, textCol);
+  block.append(contentBody);
 }
