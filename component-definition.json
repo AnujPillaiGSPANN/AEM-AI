@@ -228,7 +228,10 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Aldevron Hero Slide",
-                  "model": "aldevron-hero-slide"
+                  "model": "aldevron-hero-slide",
+                  "title": "Slide Title", 
+                  "description": "Slide Description",
+                  "image": "/default-image.png"
                 }
               }
             }
