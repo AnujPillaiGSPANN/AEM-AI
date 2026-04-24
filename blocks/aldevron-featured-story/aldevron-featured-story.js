@@ -23,47 +23,48 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  // 1. Find the elements by their common tags/classes
-  const title = block.querySelector('h1, h2, h3');
-  const picture = block.querySelector('picture');
-  const paragraphs = [...block.querySelectorAll('p')];
-  const links = [...block.querySelectorAll('a')];
+  // 1. Extract data from the block (these names must match your JSON 'name' fields)
+  // The UE usually renders these as divs within the block
+  const titleContent = block.querySelector(':scope > div > div:nth-child(1)')?.innerText;
+  const imageElement = block.querySelector('picture');
+  const bodyContent = block.querySelector(':scope > div > div:nth-child(4)'); // The rich text area
 
-  // 2. Create a clean structure
-  block.innerHTML = ''; // Clear the messy default render
+  // 2. Clear the block to rebuild it cleanly
+  block.innerHTML = '';
 
-  // Add the Title to the top
-  if (title) {
-    const titleWrapper = document.createElement('div');
-    titleWrapper.className = 'featured-story-header';
-    titleWrapper.append(title);
-    block.append(titleWrapper);
+  // 3. Create the Title Header
+  if (titleContent) {
+    const header = document.createElement('div');
+    header.className = 'featured-story-header';
+    const h2 = document.createElement('h2');
+    h2.textContent = titleContent;
+    header.append(h2);
+    block.append(header);
   }
 
-  // Create the Flex Body (Image Left, Text Right)
+  // 4. Create the Side-by-Side Body
   const body = document.createElement('div');
   body.className = 'featured-story-body';
 
-  // Left Column: Image
-  const imageCol = document.createElement('div');
-  imageCol.className = 'featured-story-image';
-  if (picture) {
-    const img = picture.querySelector('img');
-    const optimized = createOptimizedPicture(img.src, img.alt, false, [{ width: '600' }]);
-    imageCol.append(optimized);
+  // Left side: Image
+  const imgCol = document.createElement('div');
+  imgCol.className = 'featured-story-image';
+  if (imageElement) {
+    imgCol.append(imageElement);
   }
-  
-  // Right Column: Text & Button
+
+  // Right side: Text and Button
   const textCol = document.createElement('div');
   textCol.className = 'featured-story-text';
-  paragraphs.forEach(p => {
-    if (!p.querySelector('a')) textCol.append(p); // Add text
-  });
-  links.forEach(link => {
-    link.className = 'button aldevron-featured-story-cta';
-    textCol.append(link); // Add button
-  });
+  if (bodyContent) {
+    textCol.innerHTML = bodyContent.innerHTML;
+    
+    // Style any links as buttons
+    textCol.querySelectorAll('a').forEach((link) => {
+      link.classList.add('button', 'primary');
+    });
+  }
 
-  body.append(imageCol, textCol);
+  body.append(imgCol, textCol);
   block.append(body);
 }
