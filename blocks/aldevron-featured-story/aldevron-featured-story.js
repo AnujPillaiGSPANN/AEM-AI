@@ -23,67 +23,63 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  // 1. Collect all potential data parts
-  const allDivs = [...block.querySelectorAll(':scope > div > div')];
+  // 1. Get all the top-level data containers from the block
+  const rows = [...block.children];
+
+  /**
+   * BASED ON YOUR COMPONENT-MODELS.JSON ORDER:
+   * rows[0] = title
+   * rows[1] = image
+   * rows[2] = imageAlt (we usually skip this as a div)
+   * rows[3] = text (Rich Text)
+   */
   
-  let titleNode = null;
-  let pictureNode = null;
-  let contentNode = null;
+  const titleData = rows[0]?.querySelector('div');
+  const imageData = rows[1]?.querySelector('picture');
+  const textData = rows[3]?.querySelector('div');
 
-  allDivs.forEach((div) => {
-    // Check if it's the image
-    if (div.querySelector('picture')) {
-      pictureNode = div.querySelector('picture');
-    } 
-    // Check if it's the Rich Text (usually contains P, UL, or multiple lines)
-    else if (div.querySelector('p, ul, ol, a') || div.innerHTML.includes('<br>')) {
-      contentNode = div;
-    }
-    // If it's just plain text and not empty, it's likely the title
-    else if (div.innerText.trim() !== '' && !titleNode) {
-      titleNode = div;
-    }
-  });
-
-  // 2. Build the new clean structure
+  // 2. Clear the block to build the specific layout you want
   block.innerHTML = '';
 
-  // --- Title (Top) ---
-  if (titleNode) {
+  // --- 1. TITLE (Top, Full Width) ---
+  if (titleData && titleData.innerText.trim() !== '') {
     const header = document.createElement('div');
     header.className = 'featured-story-header';
     const h2 = document.createElement('h2');
-    h2.innerHTML = titleNode.innerHTML;
+    h2.innerHTML = titleData.innerHTML; // Keeps any bolding/formatting
     header.append(h2);
     block.append(header);
   }
 
-  // --- Flex Body Container ---
+  // --- 2. BODY CONTAINER (Flexbox for side-by-side) ---
   const body = document.createElement('div');
   body.className = 'featured-story-body';
 
-  // Left side: Image
-  const imgCol = document.createElement('div');
-  imgCol.className = 'featured-story-image';
-  if (pictureNode) {
-    const img = pictureNode.querySelector('img');
-    const optimized = createOptimizedPicture(img.src, img.alt || 'featured story image', false, [{ width: '750' }]);
-    imgCol.append(optimized);
+  // LEFT COLUMN: Image
+  const imageCol = document.createElement('div');
+  imageCol.className = 'featured-story-image';
+  if (imageData) {
+    const img = imageData.querySelector('img');
+    // Using the alt text field if available, otherwise default
+    const alt = rows[2]?.innerText?.trim() || 'Featured story image';
+    const optimized = createOptimizedPicture(img.src, alt, false, [{ width: '750' }]);
+    imageCol.append(optimized);
   }
-  body.append(imgCol);
+  body.append(imageCol);
 
-  // Right side: Everything else (Story text & Button)
+  // RIGHT COLUMN: Content & Button
   const textCol = document.createElement('div');
   textCol.className = 'featured-story-text';
-  if (contentNode) {
-    textCol.innerHTML = contentNode.innerHTML;
+  if (textData) {
+    textCol.innerHTML = textData.innerHTML;
     
-    // Format any links inside this area as buttons
+    // Find any links in this text and make them look like buttons
     textCol.querySelectorAll('a').forEach((link) => {
       link.classList.add('button', 'primary');
     });
   }
   body.append(textCol);
 
+  // 3. Final Assembly
   block.append(body);
 }
