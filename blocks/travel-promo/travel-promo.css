@@ -1,0 +1,70 @@
+.travel-promo {
+  padding: 24px 32px;
+  font-family: var(--body-font-family);
+}
+
+.travel-promo-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1db954, #17a34a);
+  background-size: cover;
+  background-position: center;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-promo-overlay {
+  text-align: center;
+  color: #fff;
+  padding: 40px 32px;
+  max-width: 480px;
+}
+
+.travel-promo-heading {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.travel-promo-subtitle {
+  font-size: var(--body-font-size-m);
+  opacity: 0.9;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.travel-promo-cta {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #fff;
+  color: #1db954;
+  font-weight: 700;
+  font-size: var(--body-font-size-m);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.travel-promo-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+}
+
+@media (width <= 600px) {
+  .travel-promo {
+    padding: 16px;
+  }
+
+  .travel-promo-overlay {
+    padding: 24px 16px;
+  }
+
+  .travel-promo-heading {
+    font-size: var(--heading-font-size-l);
+  }
+}

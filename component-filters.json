@@ -17,6 +17,7 @@
       "fragment",
       "form",
       "hero",
+      "hero-banner",
       "image",
       "quote",
       "search",
@@ -24,7 +25,24 @@
       "table",
       "text",
       "title",
-      "video"
+      "video",
+      "aldevron-about",
+      "aldevron-catalog-intro",
+      "aldevron-contact-us",
+      "aldevron-facilities",
+      "aldevron-featured-story",
+      "aldevron-hero-carousel",
+      "aldevron-modalities",
+      "aldevron-plasmid-preps",
+      "aldevron-product-cards",
+      "aldevron-recent-posts",
+      "travel-sidebar",
+      "travel-header",
+      "travel-featured",
+      "travel-destinations",
+      "travel-promo",
+      "travel-calendar",
+      "travel-schedule"
     ]
   },
   {
@@ -124,6 +142,24 @@
     "id": "tabs",
     "components": [
       "tabs-item"
+    ]
+  },
+  {
+    "id": "travel-destinations",
+    "components": [
+      "travel-destination-item"
+    ]
+  },
+  {
+    "id": "travel-featured",
+    "components": [
+      "travel-featured-card"
+    ]
+  },
+  {
+    "id": "travel-schedule",
+    "components": [
+      "travel-schedule-trip"
     ]
   },
   {

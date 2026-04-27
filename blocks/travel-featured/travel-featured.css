@@ -1,0 +1,82 @@
+.travel-featured {
+  padding: 24px 0;
+  font-family: var(--body-font-family);
+}
+
+.travel-featured-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 32px 16px;
+  scrollbar-width: thin;
+}
+
+.travel-featured-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 8%);
+}
+
+.travel-featured-card-image {
+  position: relative;
+  line-height: 0;
+}
+
+.travel-featured-card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.travel-featured-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgb(0 0 0 / 70%), transparent);
+  color: #fff;
+}
+
+.travel-featured-card-title {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.travel-featured-card-location {
+  font-size: var(--body-font-size-s);
+  margin: 0;
+  opacity: 0.85;
+}
+
+.travel-featured-card-rating {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  background-color: rgb(255 255 255 / 20%);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.travel-featured-card-rating::before {
+  content: "\2B50 ";
+}
+
+@media (width <= 600px) {
+  .travel-featured-card {
+    flex: 0 0 240px;
+  }
+
+  .travel-featured-container {
+    padding: 0 16px 16px;
+  }
+}

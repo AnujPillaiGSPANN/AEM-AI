@@ -924,6 +924,188 @@
     ]
   },
   {
+    "id": "travel-calendar",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "profileImage",
+        "label": "Profile Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "profileName",
+        "value": "",
+        "label": "Profile Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "profileRole",
+        "value": "",
+        "label": "Profile Role",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Calendar Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-destination-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Thumbnail Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "name",
+        "value": "",
+        "label": "Destination Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "location",
+        "value": "",
+        "label": "Location",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "rating",
+        "value": "",
+        "label": "Rating",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "price",
+        "value": "",
+        "label": "Price",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-featured-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Card Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-header",
+    "fields": [
+      {
+        "component": "text",
+        "name": "greeting",
+        "value": "",
+        "label": "Greeting",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "subtitle",
+        "value": "",
+        "label": "Subtitle",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "searchPlaceholder",
+        "value": "",
+        "label": "Search Placeholder",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-promo",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Promo Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-schedule-trip",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Trip Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "name",
+        "value": "",
+        "label": "Trip Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "dates",
+        "value": "",
+        "label": "Date Range",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "participants",
+        "value": "",
+        "label": "Participants",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-sidebar",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "nav",
+        "value": "",
+        "label": "Navigation Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "video",
     "fields": [
       {
