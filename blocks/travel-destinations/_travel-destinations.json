@@ -51,16 +51,9 @@
         },
         {
           "component": "text",
-          "name": "location",
+          "name": "details",
           "value": "",
-          "label": "Location",
-          "valueType": "string"
-        },
-        {
-          "component": "text",
-          "name": "rating",
-          "value": "",
-          "label": "Rating",
+          "label": "Location & Rating",
           "valueType": "string"
         },
         {

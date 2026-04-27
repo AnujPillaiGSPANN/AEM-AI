@@ -334,16 +334,11 @@
         "label": "Article Title"
       },
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "link",
-        "label": "Article Link"
+        "name": "text",
+        "value": "",
+        "label": "Description & Link"
       },
       {
         "component": "select",
@@ -364,7 +359,7 @@
     ]
   },
   {
-    "id": "cards-carousel",
+    "id": "cards-carousel-item",
     "fields": [
       {
         "component": "reference",
@@ -975,16 +970,9 @@
       },
       {
         "component": "text",
-        "name": "location",
+        "name": "details",
         "value": "",
-        "label": "Location",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "rating",
-        "value": "",
-        "label": "Rating",
+        "label": "Location & Rating",
         "valueType": "string"
       },
       {
@@ -1019,24 +1007,10 @@
     "id": "travel-header",
     "fields": [
       {
-        "component": "text",
-        "name": "greeting",
+        "component": "richtext",
+        "name": "text",
         "value": "",
-        "label": "Greeting",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "subtitle",
-        "value": "",
-        "label": "Subtitle",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "searchPlaceholder",
-        "value": "",
-        "label": "Search Placeholder",
+        "label": "Header Content",
         "valueType": "string"
       }
     ]

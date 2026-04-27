@@ -21,24 +21,10 @@
       "id": "travel-header",
       "fields": [
         {
-          "component": "text",
-          "name": "greeting",
+          "component": "richtext",
+          "name": "text",
           "value": "",
-          "label": "Greeting",
-          "valueType": "string"
-        },
-        {
-          "component": "text",
-          "name": "subtitle",
-          "value": "",
-          "label": "Subtitle",
-          "valueType": "string"
-        },
-        {
-          "component": "text",
-          "name": "searchPlaceholder",
-          "value": "",
-          "label": "Search Placeholder",
+          "label": "Header Content",
           "valueType": "string"
         }
       ]
