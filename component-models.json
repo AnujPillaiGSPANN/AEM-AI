@@ -334,16 +334,11 @@
         "label": "Article Title"
       },
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "link",
-        "label": "Article Link"
+        "name": "text",
+        "value": "",
+        "label": "Description & Link"
       },
       {
         "component": "select",
@@ -364,7 +359,7 @@
     ]
   },
   {
-    "id": "cards-carousel",
+    "id": "cards-carousel-item",
     "fields": [
       {
         "component": "reference",
@@ -919,6 +914,167 @@
         "name": "content_richtext",
         "value": "",
         "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-calendar",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "profileImage",
+        "label": "Profile Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "profileName",
+        "value": "",
+        "label": "Profile Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "profileRole",
+        "value": "",
+        "label": "Profile Role",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Calendar Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-destination-item",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Thumbnail Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "name",
+        "value": "",
+        "label": "Destination Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "details",
+        "value": "",
+        "label": "Location & Rating",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "price",
+        "value": "",
+        "label": "Price",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-featured-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Card Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-header",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Header Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-promo",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Promo Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-schedule-trip",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Trip Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "name",
+        "value": "",
+        "label": "Trip Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "dates",
+        "value": "",
+        "label": "Date Range",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "participants",
+        "value": "",
+        "label": "Participants",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "travel-sidebar",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "nav",
+        "value": "",
+        "label": "Navigation Content",
         "valueType": "string"
       }
     ]

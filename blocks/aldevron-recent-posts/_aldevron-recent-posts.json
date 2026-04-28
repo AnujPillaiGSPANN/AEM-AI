@@ -49,16 +49,11 @@
           "label": "Article Title"
         },
         {
-          "component": "text",
+          "component": "richtext",
           "valueType": "string",
-          "name": "description",
-          "label": "Description"
-        },
-        {
-          "component": "aem-content",
-          "valueType": "string",
-          "name": "link",
-          "label": "Article Link"
+          "name": "text",
+          "value": "",
+          "label": "Description & Link"
         },
         {
           "component": "select",

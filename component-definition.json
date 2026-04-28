@@ -364,7 +364,22 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Cards Carousel",
-                  "model": "cards-carousel"
+                  "filter": "cards-carousel"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Carousel Item",
+          "id": "cards-carousel-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Cards Carousel Item",
+                  "model": "cards-carousel-item"
                 }
               }
             }
@@ -754,6 +769,156 @@
                   "model": "tabs-item",
                   "title": "Tab Name",
                   "content_headingType": "h3"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Calendar",
+          "id": "travel-calendar",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Travel Calendar",
+                  "model": "travel-calendar"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Destinations",
+          "id": "travel-destinations",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Travel Destinations",
+                  "filter": "travel-destinations"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Destination Item",
+          "id": "travel-destination-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Travel Destination Item",
+                  "model": "travel-destination-item"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Featured",
+          "id": "travel-featured",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Travel Featured",
+                  "filter": "travel-featured"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Featured Card",
+          "id": "travel-featured-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Travel Featured Card",
+                  "model": "travel-featured-card"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Header",
+          "id": "travel-header",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Travel Header",
+                  "model": "travel-header"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Promo",
+          "id": "travel-promo",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Travel Promo",
+                  "model": "travel-promo"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Schedule",
+          "id": "travel-schedule",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Travel Schedule",
+                  "filter": "travel-schedule"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Schedule Trip",
+          "id": "travel-schedule-trip",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Travel Schedule Trip",
+                  "model": "travel-schedule-trip"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Travel Sidebar",
+          "id": "travel-sidebar",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Travel Sidebar",
+                  "model": "travel-sidebar"
                 }
               }
             }

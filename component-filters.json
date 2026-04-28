@@ -70,6 +70,12 @@
     ]
   },
   {
+    "id": "cards-carousel",
+    "components": [
+      "cards-carousel-item"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
@@ -124,6 +130,24 @@
     "id": "tabs",
     "components": [
       "tabs-item"
+    ]
+  },
+  {
+    "id": "travel-destinations",
+    "components": [
+      "travel-destination-item"
+    ]
+  },
+  {
+    "id": "travel-featured",
+    "components": [
+      "travel-featured-card"
+    ]
+  },
+  {
+    "id": "travel-schedule",
+    "components": [
+      "travel-schedule-trip"
     ]
   },
   {

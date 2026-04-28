@@ -1,0 +1,75 @@
+{
+  "definitions": [
+    {
+      "title": "Travel Destinations",
+      "id": "travel-destinations",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Travel Destinations",
+              "filter": "travel-destinations"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Travel Destination Item",
+      "id": "travel-destination-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Travel Destination Item",
+              "model": "travel-destination-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "travel-destination-item",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Thumbnail Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "name",
+          "value": "",
+          "label": "Destination Name",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "details",
+          "value": "",
+          "label": "Location & Rating",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "price",
+          "value": "",
+          "label": "Price",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "travel-destinations",
+      "components": ["travel-destination-item"]
+    }
+  ]
+}
