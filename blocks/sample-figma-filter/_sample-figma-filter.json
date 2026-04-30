@@ -1,0 +1,61 @@
+{
+  "definitions": [
+    {
+      "title": "Sample Figma Filter",
+      "id": "sample-figma-filter",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Sample Figma Filter",
+              "filter": "sample-figma-filter"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Sample Figma Filter Card",
+      "id": "sample-figma-filter-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Sample Figma Filter Card",
+              "model": "sample-figma-filter-card"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "sample-figma-filter-card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Card Image",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Card Content",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "sample-figma-filter",
+      "components": ["sample-figma-filter-card"]
+    }
+  ]
+}
