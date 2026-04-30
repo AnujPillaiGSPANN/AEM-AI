@@ -103,6 +103,18 @@
     ]
   },
   {
+    "id": "sample-figma-card-slider",
+    "components": [
+      "sample-figma-slider-card"
+    ]
+  },
+  {
+    "id": "sample-figma-filter",
+    "components": [
+      "sample-figma-filter-card"
+    ]
+  },
+  {
     "id": "table",
     "components": [
       "table-row"
